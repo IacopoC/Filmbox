@@ -22,8 +22,25 @@
                             $result_genre[] = $film_genre->name;
                             endforeach; ?>
 
-                            <p><strong>Genere:</strong> {{ implode(",",$result_genre) }} </p>
-                            <p><strong>Voto medio:</strong> {{ $film_obj->vote_average }}</p>
+                <p><strong>Genere:</strong> {{ implode(", ",$result_genre) }} </p>
+                    <p><strong>Voto medio:</strong> {{ $film_obj->vote_average }}</p>
+                        <?php if (Auth::check()): ?>
+                            <form method="POST" action="/page-film">
+                                 <fieldset>
+                            <span class="star-cb-group">
+
+                            <?php for ($i = 1; $i <=10; $i++) {
+                                ?>
+                                <input type="radio" id="rating-<?php echo $i ?>" name="rating" value="<?php echo $i;?>" /><label for="rating-10"><?php echo $i;?></label>
+                            <?php } ?>
+
+                            </span>
+                            </fieldset>
+                                <button type="submit" class="btn btn-primary">
+                                    Vota
+                                </button>
+                            </form>
+                        <?php endif; ?>
                         </div>
 
                  </div>

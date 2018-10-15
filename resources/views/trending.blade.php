@@ -9,13 +9,26 @@
             <div class="margin-up">
                 <div class="row">
                     <div class="col-md-7 col-lg-3">
-                        <div class="btn-film padding-updown">
+                      
+                        <div class="btn-film">
                         <button type="button" class="btn btn-secondary"><a href="{{ url ('best-scifi') }}"> Migliori film di Fantascienza</a></button>
                     </div>
+                      </div>
+                      <div class="col-md-7 col-lg-3">
                     <div class="btn-film">
                         <button type="button" class="btn btn-secondary"><a href="{{ url ('best-adventure') }}"> Migliori film di Avventura</a></button>
                     </div>
+                </div>
+                <div class="col-md-7 col-lg-3">
+                    <div class="btn-film">
+                        <button type="button" class="btn btn-secondary"><a href="{{ url ('best-action') }}"> Migliori film d'azione</a></button>
                     </div>
+                  </div>
+                  <div class="col-md-7 col-lg-3">
+                    <div class="btn-film">
+                        <button type="button" class="btn btn-secondary"><a href="{{ url ('best-comedy') }}"> Migliori film commedia</a></button>
+                    </div>
+                  </div>
                 </div>
                 <div class="padding-updown"></div>
                 <h2>Film di tendenza</h2>

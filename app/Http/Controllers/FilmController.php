@@ -34,4 +34,20 @@ class FilmController extends Controller
 
         return view('best-adventure', compact('adventure_obj'));
     }
+
+        public function action()
+    {
+        $action_obj = $this->basetype->getDiscoverMovie('28');
+
+
+        return view('best-action', compact('action_obj'));
+    }
+
+        public function comedy()
+    {
+        $comedy_obj = $this->basetype->getDiscoverMovie('35');
+
+
+        return view('best-comedy', compact('comedy_obj'));
+    }
 }
