@@ -61,6 +61,12 @@ class BaseType extends Controller
         return $this->service->callMovie('get',$this->baseUrl . $string);
     }
 
+    private function buildRateRequest($id, $rating_value) 
+    {
+       $string = $this->baseUrl . '/3/movie/' . $id . 'rating?api_key=' . $this->api_key . '&language=it-IT'; 
+
+       return $this->service->requestRate('post',$this->baseUrl . $string, $rating_value);
+    }
 
 
     public function getMovie($id)
@@ -94,6 +100,11 @@ class BaseType extends Controller
     {
 
         return $this->buildCallSession();
+    }
+
+    public function ratingValueRequest($id,$rating_value)
+    {
+        return $this->buildRateRequest($id,$rating_value);
     }
 
 }

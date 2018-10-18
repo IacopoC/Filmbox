@@ -38,3 +38,5 @@ Route::get('/best-adventure', 'FilmController@adventure');
 Route::get('/best-action', 'FilmController@action');
 
 Route::get('/best-comedy', 'FilmController@comedy');
+
+Route::get('/best-animation', 'FilmController@animation');

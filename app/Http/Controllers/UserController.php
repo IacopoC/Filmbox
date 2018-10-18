@@ -41,4 +41,12 @@ class UserController extends Controller
 
          return view('home');
     }
+
+    public function storeratingRequest($id,$rating_value) 
+    {
+
+        $store_rating_request = $this->basetype->ratingValueRequest('550',$_POST['rating-movie']);
+
+    }
+
 }

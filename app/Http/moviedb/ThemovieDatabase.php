@@ -27,6 +27,12 @@ class ThemovieDatabase
         return json_decode($body_results_pages);
     }
 
+     public function requestRate($method, $url, $rating_value)
+    {
+        $request = $this->client->createRequest($method, $url, ['json' => ['value' => '$rating_value']]);
+        
+    }
+
     public function callSearchMovie($method, $url, $search_res)
     {
         $results = $this->client->request($method, $url,['query' => ['search' => $search_res ]]);
