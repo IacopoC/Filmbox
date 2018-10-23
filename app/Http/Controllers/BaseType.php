@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\moviedb\ThemovieDatabase;
 
+use Illuminate\Support\Facades\Input;
+
 class BaseType extends Controller
 {
     private $service;
@@ -12,7 +14,7 @@ class BaseType extends Controller
 
     public function __construct() {
 
-        $this->api_key = '2daef69f5e47a9f774cd8db16ffba569';
+        $this->api_key = env('MOVIE_DATABASE_KEY');
         $this->service = new ThemovieDatabase();
     }
 
@@ -61,11 +63,21 @@ class BaseType extends Controller
         return $this->service->callMovie('get',$this->baseUrl . $string);
     }
 
-    private function buildRateRequest($id, $rating_value) 
+    private function buildRateRequest($guest_session_tk) 
     {
-       $string = $this->baseUrl . '/3/movie/' . $id . 'rating?api_key=' . $this->api_key . '&language=it-IT'; 
+        $input_id = Input::get('movie-id');
 
-       return $this->service->requestRate('post',$this->baseUrl . $string, $rating_value);
+       $string = $this->baseUrl . '/3/movie/' . $input_id . '/rating?api_key=' . $this->api_key . '&guest_session_id=' . $guest_session_tk; 
+
+       return $this->service->requestRate('post',$this->baseUrl . $string);
+    }
+
+     private function buildratedMovie($guest_session_tk) 
+    {
+
+       $string = $this->baseUrl . '/3/guest_session/' . $guest_session_tk . '/rated/movies?api_key=' . $this->api_key . '&language=it-IT&sort_by=created_at.asc'; 
+
+       return $this->service->callMovie('get',$this->baseUrl . $string);
     }
 
 
@@ -102,9 +114,14 @@ class BaseType extends Controller
         return $this->buildCallSession();
     }
 
-    public function ratingValueRequest($id,$rating_value)
+    public function ratingValueRequest( $input_post,$guest_session_tk)
     {
-        return $this->buildRateRequest($id,$rating_value);
+        return $this->buildRateRequest($guest_session_tk);
+    }
+
+    public function getratedMovie($guest_session_tk) 
+    {
+        return $this->buildratedMovie($guest_session_tk);
     }
 
 }

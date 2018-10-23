@@ -26,7 +26,8 @@
                     <p><strong>Voto medio:</strong> {{ $film_obj->vote_average }}</p>
                         <?php if (Auth::check()): ?>
                             <form method="POST" name="movie-rating">
-                                 <fieldset>
+                                {{ csrf_field() }}
+                           <fieldset>
                             <span class="star-cb-group">
 
                             <?php for ($i = 1; $i <=10; $i++) {
@@ -35,6 +36,7 @@
                             <?php } ?>
 
                             </span>
+                            <input id="movieId" name="movie-id" type="hidden" value="{{ $id }}">
                             </fieldset>
                                 <button type="submit" class="btn btn-primary">
                                     Vota

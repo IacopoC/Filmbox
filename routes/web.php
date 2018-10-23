@@ -31,6 +31,8 @@ Route::get('/upcoming', 'GeneralController@upcoming');
 
 Route::get('/page-film/{id}', 'FilmController@index');
 
+Route::post('/page-film/{id}','UserController@storeratingRequest');
+
 Route::get('/best-scifi', 'FilmController@sciFi');
 
 Route::get('/best-adventure', 'FilmController@adventure');

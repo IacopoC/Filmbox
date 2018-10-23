@@ -4,6 +4,8 @@ namespace App\Http\moviedb;
 
 use GuzzleHttp\Client;
 
+use Illuminate\Support\Facades\Input;
+
 class ThemovieDatabase
 {
     protected $client;
@@ -27,9 +29,11 @@ class ThemovieDatabase
         return json_decode($body_results_pages);
     }
 
-     public function requestRate($method, $url, $rating_value)
+     public function requestRate($method, $url)
     {
-        $request = $this->client->createRequest($method, $url, ['json' => ['value' => '$rating_value']]);
+        $input_post = Input::get('rating');
+
+        $request = $this->client->request($method, $url, ['form_params' => ['value' => $input_post]]);
         
     }
 

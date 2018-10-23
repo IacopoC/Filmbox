@@ -15,7 +15,7 @@ class FilmController extends Controller
     {
         $film_obj = $this->basetype->getMovie($id);
 
-        return view('page-film', compact('film_obj'));
+        return view('page-film', compact('film_obj','id'));
 
     }
 

@@ -30,7 +30,7 @@
                     </div>
                   </div>
                   <div class="col-md-7 col-lg-3">
-                    <div class="btn-film">
+                    <div class="btn-film padding-updown">
                         <button type="button" class="btn btn-secondary"><a href="{{ url ('best-animation') }}"> Migliori film animazione</a></button>
                     </div>
                   </div>
