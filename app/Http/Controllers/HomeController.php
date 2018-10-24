@@ -30,13 +30,4 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function ratedMovies($guest_session_tk) 
-    {
-        $guest_session_tk = \DB::table('users')->value('guest_session_tk');
-
-        $rated_movies = $this->basetype->getratedMovie($guest_session_tk);
-
-        return view('home' compact('rated_movies'));
-    }
-
 }

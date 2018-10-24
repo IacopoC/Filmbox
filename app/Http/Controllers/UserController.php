@@ -26,6 +26,13 @@ class UserController extends Controller
       return $guestsession;
     }
 
+    public function getguestSessionTk()
+    {
+        $guest_tk = \DB::table('users')->value('guest_session_tk');
+
+        return $guest_tk;
+    }
+
     public function storeSession(Request $request)
     {
 
@@ -36,6 +43,7 @@ class UserController extends Controller
         $guestsession_tk = User::find($id);
 
         $createguest = $this->createGuest();
+
         $guestsession_tk->guest_session_tk = $createguest->guest_session_id;
 
         $guestsession_tk->save(); 
@@ -50,13 +58,22 @@ class UserController extends Controller
     
         $input_post = Input::get('rating');
 
-        $guest_session_tk = \DB::table('users')->value('guest_session_tk');
+        $guest_session_tk = $this->getguestSessionTk();
 
         $store_rating_request = $this->basetype->ratingValueRequest($input_post, $guest_session_tk);
 
-        return 'Value Stored';
+        return 'Grazie per aver votato';
         }
 
+    }
+
+    public function ratedMovies() 
+    {
+        $guest_session_tk = $this->getguestSessionTk();
+
+        $rated_movies = $this->basetype->getratedMovie($guest_session_tk);
+
+        return view('profile', compact('rated_movies'));
     }
 
 }

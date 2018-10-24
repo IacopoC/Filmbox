@@ -1,5 +1,7 @@
 <?php
 
+
+use Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profile', 'UserController@ratedMovies')->middleware('auth');
 
 Route::get('/home', 'UserController@storeSession');
 
