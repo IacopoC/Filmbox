@@ -62,7 +62,7 @@ class UserController extends Controller
 
         $store_rating_request = $this->basetype->ratingValueRequest($input_post, $guest_session_tk);
 
-        return 'Grazie per aver votato';
+        return view('thankyou');
         }
 
     }

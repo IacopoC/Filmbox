@@ -25,6 +25,8 @@ Route::get('/profile', 'UserController@ratedMovies')->middleware('auth');
 
 Route::get('/home', 'UserController@storeSession');
 
+Route::get('/thankyou', 'HomeController@index')->middleware('auth');
+
 Route::get('/', 'GeneralController@index');
 
 Route::get('/search', 'GeneralController@search');

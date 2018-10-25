@@ -11,13 +11,12 @@
             <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"></div>
+                <div class="panel-heading"><h4>Il film che hai votato</h4></div>
 
                 <div class="panel-body">
-                    <h3>Il film che hai votato</h3>
                     @if(isset($rated_movies))
                         @foreach($rated_movies->results as $rated_movie)
-                        <p><strong>{{ $rated_movie->title }}</strong> | Voto: {{ $rated_movie->rating }}</p>
+                        <p>{{ $rated_movie->title }} | Voto: {{ $rated_movie->rating }}</p>
                         @endforeach
                     @endif
                 </div>
