@@ -58,4 +58,29 @@ class FilmController extends Controller
 
         return view('best-animation', compact('animation_obj'));
     }
+
+          public function fantasy()
+    {
+        $fantasy_obj = $this->basetype->getDiscoverMovie('14');
+
+
+        return view('best-fantasy', compact('fantasy_obj'));
+    }
+
+           public function documentary()
+    {
+        $documentary_obj = $this->basetype->getDiscoverMovie('99');
+
+
+        return view('best-documentary', compact('documentary_obj'));
+    }
+
+
+         public function horror()
+    {
+        $horror_obj = $this->basetype->getDiscoverMovie('27');
+
+
+        return view('best-horror', compact('horror_obj'));
+    }
 }

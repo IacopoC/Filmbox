@@ -21,17 +21,32 @@
                 </div>
                 <div class="col-md-7 col-lg-3">
                     <div class="btn-film">
-                        <button type="button" class="btn btn-secondary"><a href="{{ url ('best-action') }}"> Migliori film d'azione</a></button>
+                        <button type="button" class="btn btn-secondary"><a href="{{ url ('best-action') }}"> Migliori film d'Azione</a></button>
                     </div>
                   </div>
                   <div class="col-md-7 col-lg-3">
                     <div class="btn-film">
-                        <button type="button" class="btn btn-secondary"><a href="{{ url ('best-comedy') }}"> Migliori film commedia</a></button>
+                        <button type="button" class="btn btn-secondary"><a href="{{ url ('best-comedy') }}"> Migliori film Commedia</a></button>
                     </div>
                   </div>
                   <div class="col-md-7 col-lg-3">
                     <div class="btn-film padding-updown">
-                        <button type="button" class="btn btn-secondary"><a href="{{ url ('best-animation') }}"> Migliori film animazione</a></button>
+                        <button type="button" class="btn btn-secondary"><a href="{{ url ('best-animation') }}"> Migliori film Animazione</a></button>
+                    </div>
+                  </div>
+                   <div class="col-md-7 col-lg-3">
+                    <div class="btn-film padding-updown">
+                        <button type="button" class="btn btn-secondary"><a href="{{ url ('best-fantasy') }}"> Migliori film Fantasy</a></button>
+                    </div>
+                  </div>
+                  <div class="col-md-7 col-lg-3">
+                    <div class="btn-film padding-updown">
+                        <button type="button" class="btn btn-secondary"><a href="{{ url ('best-documentary') }}"> Migliori film Documentari</a></button>
+                    </div>
+                  </div>
+                   <div class="col-md-7 col-lg-3">
+                    <div class="btn-film padding-updown">
+                        <button type="button" class="btn btn-secondary"><a href="{{ url ('best-horror') }}"> Migliori film Horror</a></button>
                     </div>
                   </div>
                 </div>

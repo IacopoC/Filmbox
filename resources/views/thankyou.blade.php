@@ -15,7 +15,7 @@
 
                 <div class="panel-body">
                     <h3>Grazie per aver votato</h3>
-                    <a href="{{ url('/home') }}"><button type="button" class="btn btn-info">Torna alla home</button></a>
+                    <a href="{{ url('/') }}"><button type="button" class="btn btn-info">Torna alla home</button></a>
                 </div>
             </div>
         </div>
