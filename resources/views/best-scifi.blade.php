@@ -13,8 +13,8 @@
                     @foreach ($scifi_obj->results as $scifi_movie)
                         <div class="col-md-7 col-lg-3">
                             <a href="page-film/{{ $scifi_movie->id }}">
-                                <img src="https://image.tmdb.org/t/p/w200{{$scifi_movie->poster_path }}">
-                                <p><strong>{{ $scifi_movie->title }}</strong></p>
+                                <img class="img-poster" src="https://image.tmdb.org/t/p/w200{{$scifi_movie->poster_path }}">
+                                <h6 class="title-movie">{{ $scifi_movie->title }}</h6>
                             </a>
                         </div>
                     @endforeach

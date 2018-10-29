@@ -409,4 +409,11 @@ a:focus, a:hover, a:active {
   padding:20px 0;
  }
 
+.img-poster {
+box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
+}
 
+.title-movie {
+  padding: 10px 0;
+  color:#1a252f;
+}

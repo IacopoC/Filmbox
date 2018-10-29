@@ -13,8 +13,8 @@
                     @foreach ($animation_obj->results as $animation_movie)
                         <div class="col-md-7 col-lg-3">
                             <a href="page-film/{{ $animation_movie->id }}">
-                                <img src="https://image.tmdb.org/t/p/w200{{$animation_movie->poster_path }}">
-                                <p><strong>{{ $animation_movie->title }}</strong></p>
+                                <img class="img-poster" src="https://image.tmdb.org/t/p/w200{{$animation_movie->poster_path }}">
+                                <h6 class="title-movie">{{ $animation_movie->title }}</h6>
                             </a>
                         </div>
                     @endforeach

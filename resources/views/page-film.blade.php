@@ -12,7 +12,7 @@
                          <h1>{{ ($film_obj->title) }}</h1>
                      </div>
                         <div class="col-md-6">
-                        <img src="https://image.tmdb.org/t/p/w400{{$film_obj->poster_path }}">
+                        <img class="img-poster" src="https://image.tmdb.org/t/p/w400{{$film_obj->poster_path }}">
                         </div>
                         <div class="col-md-6">
                             <h3>Trama</h3>

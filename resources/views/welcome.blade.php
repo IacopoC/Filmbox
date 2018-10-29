@@ -33,9 +33,9 @@
                             </div>
                         </div>
                         @if($latest_movie->poster_path != '')
-                        <img src="https://image.tmdb.org/t/p/w200{{$latest_movie->poster_path }}">
+                        <img class="img-poster" src="https://image.tmdb.org/t/p/w200{{$latest_movie->poster_path }}">
                         @endif
-                        <p><strong>{{$latest_movie->title }}</strong></p>
+                        <h6 class="title-movie">{{$latest_movie->title }}</h6>
                     </a>
                     </div>
                 </div>

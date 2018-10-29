@@ -13,8 +13,8 @@
                     @foreach ($horror_obj->results as $horror_movie)
                         <div class="col-md-7 col-lg-3">
                             <a href="page-film/{{ $horror_movie->id }}">
-                                <img src="https://image.tmdb.org/t/p/w200{{$horror_movie->poster_path }}">
-                                <p><strong>{{ $horror_movie->title }}</strong></p>
+                                <img class="img-poster" src="https://image.tmdb.org/t/p/w200{{$horror_movie->poster_path }}">
+                                <h6 class="title-movie">{{ $horror_movie->title }}</h6>
                             </a>
                         </div>
                     @endforeach

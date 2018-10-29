@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-md-6">
                         @if($single_movie->poster_path != '')
-                        <img src="https://image.tmdb.org/t/p/w200{{$single_movie->poster_path }}">
+                        <img class="img-poster" src="https://image.tmdb.org/t/p/w200{{$single_movie->poster_path }}">
                         @endif
                     </div>
                     <div class="col-md-6">
