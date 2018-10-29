@@ -25,7 +25,7 @@
                 <p><strong>Genere:</strong> {{ implode(", ",$result_genre) }} </p>
                     <p><strong>Voto medio:</strong> {{ $film_obj->vote_average }}</p>
                         <?php if (Auth::check()): ?>
-                            <form method="POST" name="movie-rating">
+                            <form method="POST" name="movie-rating" class="movie-rating-vote">
                                 {{ csrf_field() }}
                            <fieldset>
                             <span class="star-cb-group">

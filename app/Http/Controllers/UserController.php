@@ -54,7 +54,8 @@ class UserController extends Controller
 
     public function storeratingRequest($guest_session_tk) 
     {
-        if (Auth::check())  {   
+
+        if(Auth::check())  {   
     
         $input_post = Input::get('rating');
 
@@ -62,8 +63,9 @@ class UserController extends Controller
 
         $store_rating_request = $this->basetype->ratingValueRequest($input_post, $guest_session_tk);
 
-        return view('thankyou');
+       return view('thankyou');
         }
+
 
     }
 

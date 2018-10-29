@@ -9,8 +9,15 @@
         <div class="margin-up">
             <h4 class="text-uppercase">Pagina profilo {{ Auth::user()->name }}</h4>
             <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+        <div class="col-md-6">
+            <div class="image-avatar">
+                <img src="{{ 'https://www.gravatar.com/avatar/' . gravatar_img(Auth::user()->email) }} . '?s=50'">
+            </div>  
+            <p>Email: {{ Auth::user()->email }} </p>
+        </div>
+        <div class="col-md-6">
+               <div class="panel panel-primary">
+               
                 <div class="panel-heading"><h4>Il film che hai votato</h4></div>
 
                 <div class="panel-body">
@@ -20,7 +27,7 @@
                         @endforeach
                     @endif
                 </div>
-            </div>
+        </div>
         </div>
     </div>
 </div>
