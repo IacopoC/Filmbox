@@ -9,17 +9,17 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/trending') }}">Di tendenza</a>
+                    <a class="{{ setActive('trending', 'active') }} nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/trending') }}">Di tendenza</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/upcoming') }}">In arrivo</a>
+                    <a class="{{ setActive('upcoming', 'active') }} nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/upcoming') }}">In arrivo</a>
                 </li>
                 @guest
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/login') }}">Login</a>
+                    <a class="{{ setActive('login', 'active') }} nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/login') }}">Login</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/register') }}">Register</a>
+                    <a class="{{ setActive('register', 'active') }} nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/register') }}">Register</a>
                 </li>
                 @else
                     <li class="dropdown">
