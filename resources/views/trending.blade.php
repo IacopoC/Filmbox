@@ -57,8 +57,8 @@
                     @foreach ($trending_obj->results as $trending_movie)
                         <div class="col-md-7 col-lg-3">
                             <a href="page-film/{{ $trending_movie->id }}">
-                            <img src="https://image.tmdb.org/t/p/w200{{$trending_movie->poster_path }}">
-                            <p><strong>{{ $trending_movie->title }}</strong></p>
+                            <img class="img-poster" src="https://image.tmdb.org/t/p/w200{{$trending_movie->poster_path }}">
+                            <h6 class="title-movie"><strong>{{ $trending_movie->title }}</strong></h6>
                             </a>
                         </div>
                     @endforeach

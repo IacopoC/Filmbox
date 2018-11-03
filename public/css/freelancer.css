@@ -393,6 +393,11 @@ a:focus, a:hover, a:active {
     margin: 0 auto;
 }
 
+.nav-proimg {
+  border:2px solid #fff;
+  border-radius:40px;
+}
+
 .film-box {
     padding:10px;
 }

@@ -7,7 +7,7 @@
     <section>
         <div class="container">
             <div class="margin-up">
-                <h3>Risultati della ricerca per {{ $query }}</h3>
+                <h3>Risultati della ricerca per: {{ $query }}</h3>
                     @foreach($search_movie->results as $single_movie)
                 <div class="spaced">
                     <div class="row">
