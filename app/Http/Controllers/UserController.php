@@ -18,6 +18,11 @@ class UserController extends Controller
         $this->basetype = $basetype;
     }
 
+     public function profile() {
+        
+        return view('profile', array('user'=>Auth::user()));
+    }
+
     public function createGuest()
     {
         
@@ -76,6 +81,31 @@ class UserController extends Controller
         $rated_movies = $this->basetype->getratedMovie($guest_session_tk);
 
         return view('profile', compact('rated_movies'));
+    }
+
+    public function updateProfile() {
+        
+        if (Auth::check())  {   
+          $id = Auth::user()->id;
+        }
+            $user =  User::find($id);
+
+             $this->validate(request(), [
+            'country' => 'nullable|max:255',
+            'hometown' => 'nullable|max:255',
+            'twitter_username' =>'nullable|max:255',
+            'instagram_username' =>'nullable|max:255'
+            ]);
+    
+            $user->country = request('country');
+            $user->hometown = request('hometown');
+            $user->twitter_username = request('twitter_username');
+            $user->instagram_username = request('instagram_username');
+            
+            $user->save();
+
+            return view('profile', compact('user'));
+    
     }
 
 }

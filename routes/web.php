@@ -22,6 +22,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'UserController@ratedMovies')->middleware('auth');
 
+Route::get('/profile', 'UserController@profile');
+
+Route::post('/profile', 'UserController@updateProfile');
+
 Route::get('/home', 'UserController@storeSession');
 
 Route::get('/thankyou', 'HomeController@index')->middleware('auth');

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Profilo {{ Auth::user()->name }}
+    Profilo {{ $user->name }}
 @endsection
 @section('content')
  <section>
@@ -10,15 +10,33 @@
             <div class="row">
         <div class="col-md-6">
             <div class="image-avatar">
-                <img src="{{ 'https://www.gravatar.com/avatar/' . gravatar_img(Auth::user()->email) }} . '?s=200'">
+                <img src="{{ 'https://www.gravatar.com/avatar/' . gravatar_img($user->email) }} . '?s=200'">
             </div> 
         </div>
         <div class="col-md-6">
-            <h4 class="text-uppercase">Pagina profilo {{ Auth::user()->name }}</h4>
-             <p><strong>Email:</strong> {{ Auth::user()->email }} </p>
+            <h4 class="text-uppercase">Pagina profilo {{ $user->name }}</h4>
+             <p><strong>Email:</strong> {{ $user->email }} </p>
+
+             @if(!empty($user->country))
+            <p>{{ $user->country }}</p>
+            @endif
+            @if(!empty($user->hometown))
+            <p>{{ $user->hometown }}</p>
+            @endif
+       
+            @if(!empty($user->twitter_username))
+            <div class="social-box">
+            <a href="https://twitter.com/{{ $user->twitter_username }}"><i class="fa fa-fw fa-twitter"></i></a>
+            </div>
+            @endif
+            @if(!empty($user->instagram_username))
+            <div class="social-box">
+            <a href="https://instagram.com/{{ $user->instagram_username }}"><i class="fa fa-fw fa-instagram"></i></a>
+            </div>
+            @endif
                <div class="panel panel-primary">
                 
-                    @if(isset($rated_movies))
+                    @if(!empty($rated_movies->results))
                     <div class="panel-heading"><h4>Il film che hai votato</h4></div>
                     <div class="panel-body">
                         @foreach($rated_movies->results as $rated_movie)
@@ -28,10 +46,74 @@
                     @endif
                 
         </div>
-        <a href="#"><button type="button" class="btn btn-info">Modifica profilo</button></a>
+        <button data-toggle="modal" data-target="#myModal" class="btn btn-info">Modifica profilo</button>
         </div>
     </div>
 </div>
     </div>
     </section>
+
+    <!-- Modal window -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header card-header-title">
+        <h4 class="modal-title card-element-title">Aggiungi informazioni profilo</h4>
+      </div>
+      <div class="modal-body">
+          <form class="form-horizontal" method="POST">
+                        {{ csrf_field() }}
+                       
+                          <div class="form-group">
+                            <label for="site_url" class="col-md-2 control-label">Città</label>
+
+                            <div class="col-md-9">
+                              <div class="input-group">
+                              <span class="input-group-addon" id="basic-addon3"></span>
+                                <input id="hometown" type="text" class="form-control" name="hometown" value="@if(!empty($user->hometown)){{ $user->hometown }} @endif" autofocus>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="job_title" class="col-md-2 control-label">Stato</label>
+
+                            <div class="col-md-9">
+                                <input id="email" type="text" class="form-control" name="country" value="@if(!empty($user->country)){{ $user->country }} @endif">
+                            </div>
+                        </div>
+
+                          <div class="form-group">
+                            <label for="twitter_username" class="col-md-2 control-label">Twitter username</label>
+
+                            <div class="col-md-9">
+                              
+                                <input id="email" type="text" class="form-control" name="twitter_username" value="@if(!empty($user->twitter_username)){{ $user->twitter_username }} @endif">
+                              </div>
+                            
+                        </div>
+
+                           <div class="form-group">
+                            <label for="twitter_username" class="col-md-2 control-label">Instagram username</label>
+
+                            <div class="col-md-9">
+                              
+                                <input id="email" type="text" class="form-control" name="instagram_username" value="@if(!empty($user->instagram_username)){{ $user->instagram_username }} @endif">
+                              </div>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-9 col-md-offset-2">
+                                <button type="submit" class="btn btn-primary">
+                                    Aggiorna profilo
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
 @endsection

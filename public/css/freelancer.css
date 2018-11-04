@@ -422,3 +422,11 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
   padding: 10px 0;
   color:#1a252f;
 }
+
+.social-box {
+  display:inline-block;
+}
+
+.social-box i {
+  font-size:2em;
+}
