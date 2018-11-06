@@ -46,11 +46,8 @@ class UserController extends Controller
         }
 
         $guestsession_tk = User::find($id);
-
         $createguest = $this->createGuest();
-
         $guestsession_tk->guest_session_tk = $createguest->guest_session_id;
-
         $guestsession_tk->save(); 
      
 
@@ -61,11 +58,8 @@ class UserController extends Controller
     {
 
         if(Auth::check())  {   
-    
         $input_post = Input::get('rating');
-
         $guest_session_tk = $this->getguestSessionTk();
-
         $store_rating_request = $this->basetype->ratingValueRequest($input_post, $guest_session_tk);
 
        return view('thankyou');
@@ -77,7 +71,6 @@ class UserController extends Controller
     public function ratedMovies() 
     {
         $guest_session_tk = $this->getguestSessionTk();
-
         $rated_movies = $this->basetype->getratedMovie($guest_session_tk);
 
         return view('profile', compact('rated_movies'));

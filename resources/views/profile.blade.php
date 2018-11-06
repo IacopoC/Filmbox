@@ -16,6 +16,7 @@
         <div class="col-md-6">
             <h4 class="text-uppercase">Pagina profilo {{ $user->name }}</h4>
              <p><strong>Email:</strong> {{ $user->email }} </p>
+             <p><strong>Iscritto dal:</strong> {{ date('d M Y', $user->created_at->timestamp) }}</p>
 
              @if(!empty($user->country))
             <p>{{ $user->country }}</p>
@@ -26,12 +27,12 @@
        
             @if(!empty($user->twitter_username))
             <div class="social-box">
-            <a href="https://twitter.com/{{ $user->twitter_username }}"><i class="fa fa-fw fa-twitter"></i></a>
+            <a href="https://twitter.com/{{ $user->twitter_username }}" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
             </div>
             @endif
             @if(!empty($user->instagram_username))
             <div class="social-box">
-            <a href="https://instagram.com/{{ $user->instagram_username }}"><i class="fa fa-fw fa-instagram"></i></a>
+            <a href="https://instagram.com/{{ $user->instagram_username }}" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
             </div>
             @endif
                <div class="panel panel-primary">
