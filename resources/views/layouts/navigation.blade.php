@@ -30,6 +30,9 @@
 
                         <ul class="dropdown-menu">
                             <li>
+                                <a href="{{ url('/account') }}">Account</a>
+                            </li>
+                            <li>
                                 <a href="{{ url('/profile') }}">Profilo</a>
                             </li>
                             <li>

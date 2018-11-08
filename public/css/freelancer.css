@@ -385,6 +385,10 @@ a:focus, a:hover, a:active {
   padding:20px;
 }
 
+.auth-title {
+  border-bottom: 3px solid #2C3E50;
+}
+
 .margin-up {
   margin-top:10%;
 }
@@ -416,6 +420,11 @@ a:focus, a:hover, a:active {
 
 .img-poster {
 box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
+}
+
+.img-profile {
+  border-radius:50%;
+  border: 10px solid #f8f9fa;
 }
 
 .title-movie {

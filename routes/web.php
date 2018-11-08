@@ -20,9 +20,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'UserController@ratedMovies')->middleware('auth');
+Route::get('/account', 'UserController@ratedMovies')->middleware('auth');
 
-Route::get('/profile', 'UserController@profile');
+Route::get('/profile', 'UserController@profile')->middleware('auth');
 
 Route::post('/profile', 'UserController@updateProfile');
 

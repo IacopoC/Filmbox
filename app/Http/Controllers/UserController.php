@@ -73,7 +73,7 @@ class UserController extends Controller
         $guest_session_tk = $this->getguestSessionTk();
         $rated_movies = $this->basetype->getratedMovie($guest_session_tk);
 
-        return view('profile', compact('rated_movies'));
+        return view('account', compact('rated_movies'));
     }
 
     public function updateProfile() {

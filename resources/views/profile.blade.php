@@ -10,11 +10,12 @@
             <div class="row">
         <div class="col-md-6">
             <div class="image-avatar">
-                <img src="{{ 'https://www.gravatar.com/avatar/' . gravatar_img($user->email) }} . '?s=200'">
+                <img class="img-profile" src="{{ 'https://www.gravatar.com/avatar/' . gravatar_img($user->email) }} . '?s=200'">
             </div> 
         </div>
         <div class="col-md-6">
-            <h4 class="text-uppercase">Pagina profilo {{ $user->name }}</h4>
+            <h4 class="text-uppercase auth-title">Profilo {{ $user->name }}</h4>
+            <div class="margin-up"></div>
              <p><strong>Email:</strong> {{ $user->email }} </p>
              <p><strong>Iscritto dal:</strong> {{ date('d M Y', $user->created_at->timestamp) }}</p>
 
@@ -44,8 +45,7 @@
                         <p>{{ $rated_movie->title }} | Voto: {{ $rated_movie->rating }}</p>
                         @endforeach
                      </div>
-                    @endif
-                
+                    @endif        
         </div>
         <button data-toggle="modal" data-target="#myModal" class="btn btn-info">Modifica profilo</button>
         </div>
@@ -54,7 +54,7 @@
     </div>
     </section>
 
-    <!-- Modal window -->
+    <!-- Finestra modale profilo -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -112,9 +112,9 @@
                             </div>
                         </div>
                     </form>
-        
       </div>
     </div>
   </div>
 </div>
+<!-- Fine finestra modale -->
 @endsection
