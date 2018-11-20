@@ -51,7 +51,7 @@ class UserController extends Controller
         $guestsession_tk->save(); 
      
 
-         return view('home');
+         return view('tk-generation');
     }
 
     public function storeratingRequest($guest_session_tk) 

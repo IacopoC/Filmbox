@@ -26,7 +26,7 @@ Route::get('/profile', 'UserController@profile')->middleware('auth');
 
 Route::post('/profile', 'UserController@updateProfile');
 
-Route::get('/home', 'UserController@storeSession');
+Route::get('/tk-generation', 'UserController@storeSession')->middleware('auth');
 
 Route::get('/thankyou', 'HomeController@index')->middleware('auth');
 

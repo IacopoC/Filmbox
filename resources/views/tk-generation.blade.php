@@ -1,14 +1,16 @@
 @extends('layout')
-
+@section('title')
+    Generazione token votazione
+@endsection
 @section('content')
     <section>
     <div class="container">
         <div class="margin-up">
-            <h4 class="text-uppercase">Sei loggato</h4>
+            <h4 class="text-uppercase">Token Votazione film e materiali</h4>
             <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"></div>
+                <div class="panel-heading">Generato token ospite</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -16,7 +18,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Benvenuto nell'area riservata di Film Box!
+                    Grazie
                 </div>
             </div>
         </div>

@@ -17,6 +17,7 @@
             <h4 class="text-uppercase auth-title">Profilo {{ $user->name }}</h4>
             <div class="margin-up"></div>
              <p><strong>Email:</strong> {{ $user->email }} </p>
+             <p><strong>Guest Token:</strong> {{ $user->guest_session_tk }} | <a href="{{ url('/tk-generation') }}" alt="rigenera-token">RIGENERA TOKEN</a></p>
              <p><strong>Iscritto dal:</strong> {{ date('d M Y', $user->created_at->timestamp) }}</p>
 
              @if(!empty($user->country))
