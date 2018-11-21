@@ -12,12 +12,15 @@
             <div class="image-avatar">
                 <img class="img-profile" src="{{ 'https://www.gravatar.com/avatar/' . gravatar_img($user->email) }} . '?s=200'">
             </div> 
+            <div class="margin-up">
+            <p>Vuoi cambiare l'immagine del profilo? La prendiamo da <a href="https://www.gravatar.com" target="_blank">gravatar.com</a></p>
+          </div>
         </div>
         <div class="col-md-6">
             <h4 class="text-uppercase auth-title">Profilo {{ $user->name }}</h4>
             <div class="margin-up"></div>
              <p><strong>Email:</strong> {{ $user->email }} </p>
-             <p><strong>Guest Token:</strong> {{ $user->guest_session_tk }} | <a href="{{ url('/tk-generation') }}" alt="rigenera-token">RIGENERA TOKEN</a></p>
+             <p><strong>Guest Token:</strong> {{ $user->guest_session_tk }} | <button onClick="confirmFunction()" alt="rigenera-token">RIGENERA TOKEN</button></p>
              <p><strong>Iscritto dal:</strong> {{ date('d M Y', $user->created_at->timestamp) }}</p>
 
              @if(!empty($user->country))
@@ -118,4 +121,11 @@
   </div>
 </div>
 <!-- Fine finestra modale -->
+<script>
+  function confirmFunction() {
+    if(confirm("Cliccando Ok, perderai i film e i materiali che hai votato e genererai un nuovo token")== true ) {
+      window.location.href = "http://homestead.test/tk-generation"
+}
+  }
+</script>
 @endsection
