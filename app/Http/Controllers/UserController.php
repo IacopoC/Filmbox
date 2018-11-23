@@ -76,6 +76,16 @@ class UserController extends Controller
         return view('account', compact('rated_movies'));
     }
 
+
+     public function deleteRatedMovie($id)
+    {
+        $guest_session_tk = $this->getguestSessionTk();
+        $rating_request = $this->basetype->getdeleteratedMovie($guest_session_tk, $id);
+
+        return view('delete-rating', compact('rating_request'));
+
+    }
+
     public function updateProfile() {
         
         if (Auth::check())  {   

@@ -19,6 +19,7 @@ class FilmController extends Controller
 
     }
 
+
     public function sciFi()
     {
         $scifi_obj = $this->basetype->getDiscoverMovie('878');

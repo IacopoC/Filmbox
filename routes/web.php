@@ -28,6 +28,8 @@ Route::post('/profile', 'UserController@updateProfile');
 
 Route::get('/tk-generation', 'UserController@storeSession')->middleware('auth');
 
+Route::delete('/delete-rating/{id}', 'UserController@deleteRatedMovie')->middleware('auth');
+
 Route::get('/thankyou', 'HomeController@index')->middleware('auth');
 
 Route::get('/', 'GeneralController@index');

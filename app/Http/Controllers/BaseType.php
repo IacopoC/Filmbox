@@ -80,6 +80,14 @@ class BaseType extends Controller
        return $this->service->callMovie('get',$this->baseUrl . $string);
     }
 
+       private function buildDeleteRatedMovie($guest_session_tk, $id) 
+    {
+
+       $string = $this->baseUrl . '/3/movie/' . $id . '/rating?api_key=' . $this->api_key . '&guest_session_id=' . $guest_session_tk; 
+
+       return $this->service->callMovie('delete',$this->baseUrl . $string);
+    }
+
 
     public function getMovie($id)
     {
@@ -122,6 +130,11 @@ class BaseType extends Controller
     public function getratedMovie($guest_session_tk) 
     {
         return $this->buildratedMovie($guest_session_tk);
+    }
+
+    public function getdeleteratedMovie($guest_session_tk,$id) 
+    {
+        return $this->buildDeleteRatedMovie($guest_session_tk, $id);
     }
 
 }
