@@ -30,8 +30,7 @@
                            <fieldset>
                             <span class="star-cb-group">
 
-                            <?php for ($i = 1; $i <=10; $i++) {
-                                ?>
+                            <?php for ($i = 1; $i <=10; $i++) { ?>
                                 <input type="radio" id="rating-<?php echo $i ?>" name="rating" value="<?php echo $i;?>" /><label for="rating-10"><?php echo $i;?></label>
                             <?php } ?>
 

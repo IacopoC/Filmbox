@@ -1,3 +1,5 @@
+@inject('countries', 'App\Http\Utilities\Country')
+
 @extends('layout')
 
 @section('title')
@@ -24,10 +26,10 @@
              <p><strong>Iscritto dal:</strong> {{ date('d M Y', $user->created_at->timestamp) }}</p>
 
              @if(!empty($user->country))
-            <p>{{ $user->country }}</p>
+            <p>{{ $user->country }},
             @endif
             @if(!empty($user->hometown))
-            <p>{{ $user->hometown }}</p>
+            {{ $user->hometown }}</p>
             @endif
        
             @if(!empty($user->twitter_username))
@@ -84,7 +86,13 @@
                             <label for="job_title" class="col-md-2 control-label">Stato</label>
 
                             <div class="col-md-9">
-                                <input id="email" type="text" class="form-control" name="country" value="@if(!empty($user->country)){{ $user->country }} @endif">
+                                <select id="country" class="form-control" name="country">
+
+                                  <!--Uso blade inject come sopra per classe Country-->
+                                @foreach( $countries::all() as $country => $code) 
+                                <option <?php if (isset($user->country) && $user->country == $code): echo "selected"; endif;?> value="{{ $code }}">{{ $country }}</option>
+                                @endforeach
+                                 </select>
                             </div>
                         </div>
 
