@@ -4,9 +4,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-5 mb-lg-0">
-                <h4 class="text-uppercase mb-4">Altre risorse</h4>
-                <p class="lead mb-0">Lorem ipsum sic altem
-                    <br>Lorem ipsum</p>
+                <h4 class="text-uppercase mb-4">Menu</h4>
+                <p class="lead mb-0"><a class="{{ setActive('trending', 'active') }}" href="{{ url('/trending') }}">Di tendenza</a></p>
+                 <p class="lead mb-0"><a class="{{ setActive('upcoming', 'active') }}" href="{{ url('/upcoming') }}">In arrivo</a></p>
+                 <p class="lead mb-0"><a class="{{ setActive('login', 'active') }}" href="{{ url('/login') }}">Login</a></p>
+                  <p class="lead mb-0"><a class="{{ setActive('register', 'active') }}" href="{{ url('/register') }}">Register</a></p>
             </div>
             <div class="col-md-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">Seguici</h4>
@@ -49,7 +51,7 @@
 
 <div class="copyright py-4 text-center text-white">
     <div class="container">
-        <small>Copyright &copy; Film Box 2018</small>
+        <small>&copy; Film Box 2018</small>
     </div>
 </div>
 

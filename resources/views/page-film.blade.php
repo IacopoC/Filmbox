@@ -11,20 +11,27 @@
                      <div class="col-md-12">
                          <h1>{{ ($film_obj->title) }}</h1>
                      </div>
+                        
                         <div class="col-md-6">
+                            @if($film_obj->poster_path !='')
                         <img class="img-poster" src="https://image.tmdb.org/t/p/w400{{$film_obj->poster_path }}">
+                            @endif
                         </div>
+
                         <div class="col-md-6">
+                         @if($film_obj->overview !='')   
                             <h3>Trama</h3>
                             <p>{{ $film_obj->overview }}</p>
-
+                         @endif
                             <?php foreach ($film_obj->genres as $film_genre):
                             $result_genre[] = $film_genre->name;
                             endforeach; ?>
-
-                <p><strong>Genere:</strong> {{ implode(", ",$result_genre) }} </p>
-                    <p><strong>Voto medio:</strong> {{ $film_obj->vote_average }}</p>
-                        <?php if (Auth::check()): ?>
+                            @if(isset($result_genre))
+                            <p><strong>Genere:</strong> {{ implode(", ",$result_genre) }} </p>
+                            @endif
+                            <p><strong>Voto medio:</strong> {{ $film_obj->vote_average }}</p>
+                            
+                            <?php if (Auth::check()): ?>
                             <form method="POST" name="movie-rating" class="movie-rating-vote">
                                 {{ csrf_field() }}
                            <fieldset>

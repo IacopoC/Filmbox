@@ -12,7 +12,7 @@
             <hr class="star-light">
             <div class="col-lg-7 col-centered center">
                 <form action="{{ url('/search') }}" method="get">
-            <input class="form-control" name="q" type="text" placeholder="Search" aria-label="Search">
+            <input class="form-control searchfilm-field" name="q" type="text" placeholder="Cerca per titolo..." aria-label="Search"><input type="submit" class="btn btn-default searchfilm-btn" value="Cerca">
                 </form>
             </div>
         </div>

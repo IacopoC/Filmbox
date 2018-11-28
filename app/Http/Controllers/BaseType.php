@@ -41,7 +41,7 @@ class BaseType extends Controller
 
     private function buildSearchCall($type_media, $query)
     {
-        $string = $this->baseUrl . '/3/' . $type_media . '/movie' . '?api_key=' . $this->api_key . '&language=it-IT&query=' . $query;
+        $string = $this->baseUrl . '/3/' . $type_media . '/movie' . '?api_key=' . $this->api_key . '&language=it-IT&include_adult=false&query=' . $query;
 
         return $this->service->callMovie('get',$this->baseUrl . $string);
     }
@@ -88,6 +88,10 @@ class BaseType extends Controller
        return $this->service->callMovie('delete',$this->baseUrl . $string);
     }
 
+    /*
+    * Metodi per chiamate singole nei controller specifici
+    *
+    */
 
     public function getMovie($id)
     {

@@ -10,6 +10,7 @@ class FilmController extends Controller
     {
         $this->basetype = $basetype;
     }
+    
 
     public function index($id)
     {
@@ -19,6 +20,10 @@ class FilmController extends Controller
 
     }
 
+    /*
+    *  Metodi per pagine film di genere
+    *
+    */
 
     public function sciFi()
     {

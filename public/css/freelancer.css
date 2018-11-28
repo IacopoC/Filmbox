@@ -381,6 +381,17 @@ a:focus, a:hover, a:active {
   border-color: #1a252f;
 }
 
+
+.searchfilm-field {
+  width:75%;
+  display:inline;
+}
+
+.searchfilm-btn {
+  display:inline;
+  margin: 0px 5px 3px 5px;
+}
+
 .spaced {
   padding:20px;
 }
