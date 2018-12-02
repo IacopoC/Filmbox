@@ -41,7 +41,7 @@ class BaseType extends Controller
 
     private function buildSearchCall($type_media, $query)
     {
-        $string = $this->baseUrl . '/3/' . $type_media . '/movie' . '?api_key=' . $this->api_key . '&language=it-IT&include_adult=false&query=' . $query;
+        $string = $this->baseUrl . '/3/search/' . $type_media . '?api_key=' . $this->api_key . '&language=it-IT&include_adult=false&query=' . $query;
 
         return $this->service->callMovie('get',$this->baseUrl . $string);
     }
@@ -110,9 +110,9 @@ class BaseType extends Controller
     }
 
 
-    public function searchMovie($query)
+    public function searchMovie($type_media, $query)
     {
-        return $this->buildSearchCall('search', $query);
+        return $this->buildSearchCall($type_media , $query);
     }
 
     public function getDiscoverMovie($genre)

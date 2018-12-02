@@ -23,7 +23,9 @@ class GeneralController extends Controller
 
         $query = $_GET['q'];
 
-        $search_movie = $this->basetype->searchMovie($query);
+        $type_media = $_GET['opt-search'];
+
+        $search_movie = $this->basetype->searchMovie($type_media, $query);
 
         return view('search', compact('search_movie', 'query'));
     }
