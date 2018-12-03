@@ -11,15 +11,7 @@
             <h1 class="text-uppercase mb-0">Cerca un film</h1>
             <hr class="star-light">
             <div class="col-lg-7 col-centered center">
-                <form action="{{ url('/search') }}" method="get">
-            <input class="form-control searchfilm-field" name="q" type="text" placeholder="Cerca per titolo..." aria-label="Search">
-             <select id="selection" class="form-control" name="opt-search">
-                <option selected value="movie">Film</option>
-                <option value="person">Celebrità</option>
-                <option value="tv">Serie tv</option>
-            </select>
-            <input type="submit" class="btn btn-default searchfilm-btn" value="Cerca">
-                </form>
+              @include('layouts/search-bar')
             </div>
         </div>
     </header>

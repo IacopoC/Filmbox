@@ -1,25 +1,21 @@
 @extends('layout')
 
 @section('title')
-    Pagina risultati ricerca
+    Pagina risultati ricerca per {{ $query }}
 @endsection
 @section('content')
             
     <section>
         <div class="container">
-        <div class="margin-up">
+             <div class="margin-up">
             <h3>Ricerca un film</h3>
-        <form action="{{ url('/search') }}" method="get">
-            <input class="form-control searchfilm-field" name="q" type="text" placeholder="Cerca per titolo..." aria-label="Search">
-            <select id="selection" class="form-control" name="opt-search">
-                <option selected value="movie">Film</option>
-                <option value="person">Celebrità</option>
-                <option value="tv">Serie tv</option>
-            </select>
-            <input type="submit" class="btn btn-default searchfilm-btn" value="Cerca">
-                </form>
-            </div>   
+            <!--Includi barra di ricerca-->
+       @include('layouts/search-bar')
+            <!--Fine barra di ricerca-->
+            </div>
+            
             <div class="margin-up">
+                @if(!empty($query))
                 <h3>Risultati della ricerca per: {{ $query }}</h3>
                 @if($_GET['opt-search'] == 'movie')
                     @foreach($search_movie->results as $single_movie)
@@ -60,14 +56,15 @@
                     </a>
                     </div>
                     <div class="col-md-6">
-                        <h4>{{ $single_celeb->title }}</h4>
+                        <a href="page-film/{{ $single_celeb->id }}"><h4>{{ $single_celeb->title }}</h4></a>
                         <p>Lingua originale: {{ $single_celeb->original_language}}</p>
                         <p>Titolo originale: {{ $single_celeb->original_title}}</p>
                     </div>
                     </div>
                 </div>
+                <hr/> 
                     @endforeach     
-                       
+                      
         @endforeach
         @endif
          @if($_GET['opt-search'] == 'tv')
@@ -93,6 +90,7 @@
         @endforeach
         @endif
             </div>
+            @endif
         </div>
     </section>
 @endsection

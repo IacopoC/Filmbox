@@ -383,13 +383,18 @@ a:focus, a:hover, a:active {
 
 
 .searchfilm-field {
-  width:75%;
+  width:60%;
   display:inline;
 }
 
 .searchfilm-btn {
   display:inline;
   margin: 0px 5px 3px 5px;
+}
+
+#selection-media {
+  width:20%;
+  display:inline;
 }
 
 .spaced {
