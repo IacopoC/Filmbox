@@ -16,9 +16,12 @@ class FilmController extends Controller
     {
         $film_obj = $this->basetype->getMovie($id);
 
-        return view('page-film', compact('film_obj','id'));
+        $similar_obj = $this->basetype->getSimilarMovie($id);
+
+        return view('page-film', compact('film_obj','id', 'similar_obj'));
 
     }
+
 
     /*
     *  Metodi per pagine film di genere

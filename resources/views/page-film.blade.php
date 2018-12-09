@@ -50,9 +50,32 @@
                             </form>
                         <?php endif; ?>
                         </div>
+                       </div>
+                    </div>
+                </div>
+        </section>
+        <!-- Sezione film simili -->
 
-                 </div>
+        @if($similar_obj->results != '')
+        <section>
+        <div class="container">
+                 <div class="row">
+                        <div class="col-md-12">
+                            <h3>Film simili:</h3>
+                        </div> 
+                    @foreach($similar_obj->results as $similar_movie)
+                      <div class="col-md-7 col-lg-2">
+                            <a href="{{ $similar_movie->id }}">
+                            @if($similar_movie->poster_path != '')
+                            <img class="img-poster" src="https://image.tmdb.org/t/p/w154{{$similar_movie->poster_path }}">
+                            @endif
+                         <p class="title-movie">{{$similar_movie->title }}</p>
+                        </a>
+                      </div>
+                    @endforeach
+                </div>
              </div>
-        </div>
-    </section>
+         </section>
+         @endif
+         <!--Fine film simili-->
 @endsection

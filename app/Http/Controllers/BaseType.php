@@ -53,6 +53,13 @@ class BaseType extends Controller
         return $this->service->callMovie('get',$this->baseUrl . $string);
     }
 
+    private function buildSimilarMovieCall($id)
+    {
+        $string = $this->baseUrl . '/3/movie/' . $id . '/similar?api_key=' . $this->api_key . '&language=it-IT';
+
+        return $this->service->callMovie('get',$this->baseUrl . $string);
+    }
+
     private function buildCallLists($type_media)
     {
         $currentDate = date("Y-m-d");
@@ -139,6 +146,11 @@ class BaseType extends Controller
     public function getdeleteratedMovie($guest_session_tk,$id) 
     {
         return $this->buildDeleteRatedMovie($guest_session_tk, $id);
+    }
+
+     public function getSimilarMovie($id) 
+    {
+        return $this->buildSimilarMovieCall($id);
     }
 
 }
