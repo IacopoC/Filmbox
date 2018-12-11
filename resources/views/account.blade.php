@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Account {{ Auth::user()->name }}
+    Account attività - {{ Auth::user()->name }}
 @endsection
 @section('content')
  <section>
@@ -19,7 +19,7 @@
                <div class="panel panel-primary">
                 
                     @if(!empty($rated_movies->results))
-                    <div class="panel-heading"><h4>Film votati</h4></div>
+                    <div class="panel-heading"><h4>Film votati <div class="count-number">{{ count($rated_movies->results) }}</div></h4></div>
                     <div class="panel-body">
                         @foreach($rated_movies->results as $rated_movie)
 
@@ -30,6 +30,7 @@
                           {{ csrf_field() }}
                         <button class="btn btn-warning" type="submit">Delete</button>
                         </form>
+                        <a href="/page-film/{{ $rated_movie->id }}"><button class="btn btn-info">Scheda film</button></a>
                       </div>
 
                         @endforeach

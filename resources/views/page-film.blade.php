@@ -56,7 +56,7 @@
         </section>
         <!-- Sezione film simili -->
 
-        @if($similar_obj->results != '')
+        @if(!empty($similar_obj->results))
         <section>
         <div class="container">
                  <div class="row">

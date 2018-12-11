@@ -5,10 +5,10 @@
         <div class="row">
             <div class="col-md-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">Menu</h4>
-                <p class="lead mb-0"><a class="{{ setActive('trending', 'active') }}" href="{{ url('/trending') }}">Di tendenza</a></p>
-                 <p class="lead mb-0"><a class="{{ setActive('upcoming', 'active') }}" href="{{ url('/upcoming') }}">In arrivo</a></p>
-                 <p class="lead mb-0"><a class="{{ setActive('login', 'active') }}" href="{{ url('/login') }}">Login</a></p>
-                  <p class="lead mb-0"><a class="{{ setActive('register', 'active') }}" href="{{ url('/register') }}">Register</a></p>
+                <p class="lead mb-0"><a href="{{ url('/trending') }}">Di tendenza</a></p>
+                 <p class="lead mb-0"><a href="{{ url('/upcoming') }}">In arrivo</a></p>
+                 <p class="lead mb-0"><a href="{{ url('/login') }}">Login</a></p>
+                  <p class="lead mb-0"><a href="{{ url('/register') }}">Register</a></p>
             </div>
             <div class="col-md-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">Seguici</h4>
