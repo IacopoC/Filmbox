@@ -19,18 +19,19 @@
                <div class="panel panel-primary">
                 
                     @if(!empty($rated_movies->results))
-                    <div class="panel-heading"><h4>Film votati <div class="count-number">{{ count($rated_movies->results) }}</div></h4></div>
+                    <div class="panel-heading"><h4>Film votati</h4></div>
                     <div class="panel-body">
                         @foreach($rated_movies->results as $rated_movie)
 
                       <div class="margin-up-15">
+                        <div id="movie-rated">
                         <p class="d-inline">{{ $rated_movie->title }} | Voto: {{ $rated_movie->rating }}</p>
-                        <form class="d-inline px-2" action="{{ url('/delete-rating/') . '/' . $rated_movie->id }}" method="post">
-                          {{ method_field('DELETE') }}
+                        <form id="rated-form" class="d-inline px-2">
                           {{ csrf_field() }}
                         <button class="btn btn-warning" type="submit">Delete</button>
                         </form>
                         <a href="/page-film/{{ $rated_movie->id }}"><button class="btn btn-info">Scheda film</button></a>
+                        </div>
                       </div>
 
                         @endforeach
@@ -43,4 +44,33 @@
     </div>
     </section>
 
+     <script>
+        
+    document.getElementById('rated-form').addEventListener('submit',deleteRating);
+
+    function deleteRating(e) {
+        e.preventDefault();
+
+        var api_key = '{{ env('MOVIE_DATABASE_KEY') }}';
+        var movie_id = '{{ $rated_movie->id }}';
+        var guest_session_tk = '{{ $guest_session_tk }}';
+        var data = "{}";
+
+        var xhr = new XMLHttpRequest();
+
+        var url = 'https://api.themoviedb.org/3/movie/' + movie_id + '/rating?api_key=' + api_key + '&guest_session_id=' + guest_session_tk;
+      
+        xhr.open('DELETE', url , true);
+        xhr.setRequestHeader('Content-type','application/json;charset=utf-8');
+        xhr.onreadystatechange = function () {
+            if (xhr.status == 200) {
+
+                console.log('200 inviato');
+            }
+        }
+        document.getElementById('movie-rated').outerHTML = "";
+        xhr.send(data);
+    }
+
+         </script>
 @endsection

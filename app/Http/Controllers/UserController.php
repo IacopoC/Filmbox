@@ -54,26 +54,13 @@ class UserController extends Controller
          return view('tk-generation');
     }
 
-    public function storeratingRequest($guest_session_tk) 
-    {
-
-        if(Auth::check())  {   
-        $input_post = Input::get('rating');
-        $guest_session_tk = $this->getguestSessionTk();
-        $store_rating_request = $this->basetype->ratingValueRequest($input_post, $guest_session_tk);
-
-       return view('thankyou');
-        }
-
-
-    }
 
     public function ratedMovies() 
     {
         $guest_session_tk = $this->getguestSessionTk();
         $rated_movies = $this->basetype->getratedMovie($guest_session_tk);
 
-        return view('account', compact('rated_movies'));
+        return view('account', compact('rated_movies','guest_session_tk'));
     }
 
 
