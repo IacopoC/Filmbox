@@ -101,8 +101,7 @@
         xhr.setRequestHeader('Content-type','application/json;charset=utf-8');
         xhr.onreadystatechange = function () {
             if (xhr.status == 200) {
-
-                console.log('200 inviato');
+                 console.log(xhr.responseText);    
             }
         }
         document.getElementById('rated-message').innerHTML = 'Grazie per il tuo voto';

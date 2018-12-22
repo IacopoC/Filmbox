@@ -329,6 +329,10 @@ form .row:first-child .floating-label-form-group {
   color: #fff;
 }
 
+.none {
+  display:none;
+}
+
 .copyright {
   background-color: #1a252f;
 }
