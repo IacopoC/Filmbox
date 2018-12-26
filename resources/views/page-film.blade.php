@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-     {{ $film_obj->title }} - FilmBox
+    Pagina film {{ $film_obj->title }}
 @endsection
 @section('content')
     <section>
