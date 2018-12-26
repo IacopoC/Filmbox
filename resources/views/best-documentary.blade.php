@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Migliori film documentari
+    Migliori film documentari - FilmBox
 @endsection
 @section('content')
     <section>

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Migliori film di fantascienza
+    Migliori film di fantascienza - FilmBox
 @endsection
 @section('content')
     <section>

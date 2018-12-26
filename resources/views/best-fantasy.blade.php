@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Migliori film fantasy
+    Migliori film fantasy - FilmBox
 @endsection
 @section('content')
     <section>

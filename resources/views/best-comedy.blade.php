@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Migliori film commedia
+    Migliori film commedia - FilmBox
 @endsection
 @section('content')
     <section>

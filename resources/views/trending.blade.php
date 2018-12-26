@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Film di tendenza
+    Film di tendenza - FilmBox
 @endsection
 @section('content')
     <section>

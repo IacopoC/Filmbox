@@ -3,7 +3,7 @@
 @extends('layout')
 
 @section('title')
-    Profilo {{ $user->name }}
+    Profilo {{ $user->name }} - FilmBox
 @endsection
 @section('content')
  <section>

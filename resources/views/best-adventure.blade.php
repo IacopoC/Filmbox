@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Migliori film di avventura
+    Migliori film di avventura - FilmBox
 @endsection
 @section('content')
     <section>

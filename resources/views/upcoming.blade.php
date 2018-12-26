@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Film in arrivo
+    Film in arrivo - FilmBox
 @endsection
 @section('content')
     <section>

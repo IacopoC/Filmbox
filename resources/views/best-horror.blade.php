@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Migliori film Horror
+    Migliori film Horror - FilmBox
 @endsection
 @section('content')
     <section>

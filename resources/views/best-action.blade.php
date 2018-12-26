@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Migliori film di azione
+    Migliori film di azione - FilmBox
 @endsection
 @section('content')
     <section>
