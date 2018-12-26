@@ -4,21 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Input;
+
 class FilmController extends Controller
 {
     public function __construct(BaseType $basetype)
     {
         $this->basetype = $basetype;
     }
+
+        public function getguestSessionTk()
+    {
+        $guest_tk = \DB::table('users')->value('guest_session_tk');
+
+        return $guest_tk;
+    }
     
 
     public function index($id)
     {
+
+        $guest_tk = $this->getguestSessionTk();
+
         $film_obj = $this->basetype->getMovie($id);
 
         $similar_obj = $this->basetype->getSimilarMovie($id);
 
-        return view('page-film', compact('film_obj','id', 'similar_obj'));
+        return view('page-film', compact('film_obj','id', 'similar_obj','guest_tk'));
 
     }
 

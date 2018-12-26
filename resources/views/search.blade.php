@@ -18,6 +18,12 @@
                 @if(!empty($query))
                 <h3>Risultati della ricerca per: {{ $query }}</h3>
                 @if($_GET['opt-search'] == 'movie')
+
+                @if(empty($search_movie->results)) 
+                <div class="alert alert-info" role="alert">
+                    Nessun risultato per questa ricerca
+                </div>
+                @endif
                     @foreach($search_movie->results as $single_movie)
                 <div class="spaced">
                     <div class="row">
@@ -45,6 +51,12 @@
         @endforeach
         @endif
         @if($_GET['opt-search'] == 'person')
+
+         @if(empty($search_movie->results)) 
+         <div class="alert alert-info" role="alert">
+            Nessun risultato per questa ricerca
+         </div>
+         @endif
              @foreach($search_movie->results as $single_person)
             
                     @foreach($single_person->known_for as $single_celeb)
@@ -68,6 +80,12 @@
         @endforeach
         @endif
          @if($_GET['opt-search'] == 'tv')
+         
+         @if(empty($search_movie->results)) 
+         <div class="alert alert-info" role="alert">
+            Nessun risultato per questa ricerca
+        </div>
+         @endif
                     @foreach($search_movie->results as $single_movie)
                 <div class="spaced">
                     <div class="row">
