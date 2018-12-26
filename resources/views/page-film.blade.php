@@ -48,7 +48,9 @@
                                     Vota
                                 </button>
                             </form>
-                            <p id="rated-message"></p>
+                            <div class="margin-up">
+                            <h6 id="rated-message"></h6>
+                          </div>
                         <?php endif; ?>
                         </div>
                        </div>
@@ -104,7 +106,7 @@
                  console.log(xhr.responseText);    
             }
         }
-        document.getElementById('rated-message').innerHTML = 'Grazie per il tuo voto';
+        document.getElementById('rated-message').innerHTML = 'Grazie per aver votato <a href="/account">Elenco film votati <i class="fa fa-arrow-right"></a>';
         xhr.send(param);
     }
 
