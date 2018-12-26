@@ -32,14 +32,14 @@
                             <p><strong>Voto medio:</strong> {{ $film_obj->vote_average }}</p>
                             
                             <?php if (Auth::check()): ?>
-                            <form  name="movie-rating" id="rating-form">
+                            <form method="POST" name="movie-rating" class="movie-rating-vote">
                                 {{ csrf_field() }}
                            <fieldset>
                             <span class="star-cb-group">
-                                <input type="radio" id="rating-id-4" name="rating" value="4" /><label for="rating-4">Da evitare</label>
-                                <input type="radio" id="rating-id-6" name="rating" value="6" /><label for="rating-6">Sufficiente</label>
-                                <input type="radio" id="rating-id-8" name="rating" value="8" /><label for="rating-8">Buono</label>
-                                <input type="radio" id="rating-id-10" name="rating" value="10" /><label for="rating-10">Ottimo</label>
+
+                            <?php for ($i = 1; $i <=10; $i++) { ?>
+                                <input type="radio" id="rating-<?php echo $i ?>" name="rating" value="<?php echo $i;?>" /><label for="rating-10"><?php echo $i;?></label>
+                            <?php } ?>
 
                             </span>
                             <input id="movieId" name="movie-id" type="hidden" value="{{ $id }}">
@@ -48,7 +48,6 @@
                                     Vota
                                 </button>
                             </form>
-                            <p id="rated-message"></p>
                         <?php endif; ?>
                         </div>
                        </div>
@@ -79,34 +78,4 @@
          </section>
          @endif
          <!--Fine film simili-->
-
-         <script>
-        
-    document.getElementById('rating-form').addEventListener('submit',getRating);
-
-    function getRating(e) {
-        e.preventDefault();
-
-        var name = document.querySelector('input[name="rating"]:checked').value;
-        var param = JSON.stringify({ "value": name });
-        var api_key = '{{ env('MOVIE_DATABASE_KEY') }}';
-        var movie_id = '{{ $film_obj->id }}';
-        var guest_session_tk = '{{ $guest_tk }}';
-
-        var xhr = new XMLHttpRequest();
-
-        var url = 'https://api.themoviedb.org/3/movie/' + movie_id + '/rating?api_key=' + api_key + '&guest_session_id=' + guest_session_tk;
-      
-        xhr.open('POST', url , true);
-        xhr.setRequestHeader('Content-type','application/json;charset=utf-8');
-        xhr.onreadystatechange = function () {
-            if (xhr.status == 200) {
-                 console.log(xhr.responseText);    
-            }
-        }
-        document.getElementById('rated-message').innerHTML = 'Grazie per il tuo voto';
-        xhr.send(param);
-    }
-
-         </script>
 @endsection
