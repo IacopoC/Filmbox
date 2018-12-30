@@ -53,9 +53,9 @@ class BaseType extends Controller
         return $this->service->callMovie('get',$this->baseUrl . $string);
     }
 
-    private function buildSimilarMovieCall($id)
+    private function buildMovieCall($id, $type_content)
     {
-        $string = $this->baseUrl . '/3/movie/' . $id . '/similar?api_key=' . $this->api_key . '&language=it-IT';
+        $string = $this->baseUrl . '/3/movie/' . $id . '/' . $type_content . '?api_key=' . $this->api_key . '&language=it-IT';
 
         return $this->service->callMovie('get',$this->baseUrl . $string);
     }
@@ -150,7 +150,12 @@ class BaseType extends Controller
 
      public function getSimilarMovie($id) 
     {
-        return $this->buildSimilarMovieCall($id);
+        return $this->buildMovieCall($id, 'similar');
+    }
+
+      public function getVideoTMovie($id) 
+    {
+        return $this->buildMovieCall($id, 'videos');
     }
 
 }
