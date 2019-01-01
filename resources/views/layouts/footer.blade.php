@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-4">
                 <h4 class="text-uppercase mb-4">About Film BOX</h4>
-                <p class="lead mb-0">Film Box è realizzata ma non supportata da <a href="http://theinternetmoviedatabase.com">TMDB</a>. Un archivio
+                <p class="lead mb-0">Film Box è realizzata ma non supportata da <a href="http://themoviedb.org" target="_blank">TMDB</a>. Un archivio
                     dove trovare i tuoi film preferiti</p>
             </div>
         </div>
@@ -51,7 +51,7 @@
 
 <div class="copyright py-4 text-center text-white">
     <div class="container">
-        <small>&copy; Film Box 2018</small>
+        <small>&copy; Film Box {{ date('Y') }}</small>
     </div>
 </div>
 

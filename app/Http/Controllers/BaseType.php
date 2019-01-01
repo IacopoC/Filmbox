@@ -62,10 +62,7 @@ class BaseType extends Controller
 
     private function buildCallLists($type_media)
     {
-        $currentDate = date("Y-m-d");
-        $previousDate = date("Y-m-d", strtotime(" -1 months"));
-
-        $string = $this->baseUrl . '/3/' . $type_media . '/movie?api_key=' . $this->api_key . '&language=it-IT&primary_release_date.gte=' . $previousDate . '&primary_release_date.lte=' . $currentDate;
+        $string = $this->baseUrl . '/3/movie/' . $type_media . '?api_key=' . $this->api_key . '&language=it-IT';
 
         return $this->service->callMovie('get',$this->baseUrl . $string);
     }
@@ -113,13 +110,13 @@ class BaseType extends Controller
 
     public function getLatestMovies() {
 
-        return $this->buildCallLists('discover',null);
+        return $this->buildCallLists('now_playing');
     }
 
 
     public function searchMovie($type_media, $query)
     {
-        return $this->buildSearchCall($type_media , $query);
+        return $this->buildSearchCall($type_media, $query);
     }
 
     public function getDiscoverMovie($genre)

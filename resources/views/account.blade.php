@@ -9,12 +9,7 @@
         <div class="margin-up">
             <div class="row">
         <div class="col-md-6">
-            <div class="image-avatar">
-                <img class="img-profile" src="{{ 'https://www.gravatar.com/avatar/' . gravatar_img(Auth::user()->email) }} . '?s=200'">
-            </div> 
-        </div>
-        <div class="col-md-6">
-               <h4 class="text-uppercase auth-title">Attività Account {{ Auth::user()->name }}</h4>
+             <h4 class="text-uppercase auth-title">Attività Account {{ Auth::user()->name }}</h4>
                <div class="margin-up"></div>
                <div class="panel panel-primary">
                 
@@ -33,6 +28,16 @@
                      </div>
                     @endif   
         </div>
+        </div>
+        <div class="col-md-6">
+            <h4 class="text-uppercase auth-title">Opzioni</h4>
+            <div class="margin-up"></div>
+              <div class="panel panel-primary">
+                 <div class="panel-heading"><h4>Esportazione ultimi film</h4></div>
+                  <div class="margin-up-15">
+              <button class="btn btn-info"><a href="http://files.tmdb.org/p/exports/movie_ids_{{ date('d_m_Y') }}.json.gz">Esporta in ZIP i film</a></button>
+          </div>
+          </div>
         </div>
        </div>
       </div>

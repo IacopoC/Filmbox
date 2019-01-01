@@ -465,6 +465,11 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
   font-size:2em;
 }
 
+.btn-info a {
+  color:#fff;
+  text-decoration:none;
+}
+
 /*------Icone votazione film---------------*/
 
 .rating-fields {
