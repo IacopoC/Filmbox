@@ -46,19 +46,19 @@
 
      <script>
     function deleteRating(movie_id) {
-    var api_key = '{{ env('MOVIE_DATABASE_KEY') }}';
-    var guest_session_tk = '{{ $guest_session_tk }}';
-    var data = "{}";
+    const api_key = '{{ env('MOVIE_DATABASE_KEY') }}';
+    let guest_session_tk = '{{ $guest_session_tk }}';
+    let data = "{}";
 
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
 
-    var url = 'https://api.themoviedb.org/3/movie/' + movie_id + '/rating?api_key=' + api_key + '&guest_session_id=' + guest_session_tk;
+    let url = 'https://api.themoviedb.org/3/movie/' + movie_id + '/rating?api_key=' + api_key + '&guest_session_id=' + guest_session_tk;
       
     xhr.open('DELETE', url , true);
     xhr.setRequestHeader('Content-type','application/json;charset=utf-8');
     xhr.onreadystatechange = function () {
         if (xhr.status == 200) { 
-             var element = document.getElementById('movie-rated-' + movie_id);
+             let element = document.getElementById('movie-rated-' + movie_id);
             element.classList.add("none");   
         }
     }

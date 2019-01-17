@@ -20,22 +20,12 @@
                     </li>
                     <li class="list-inline-item">
                         <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                            <i class="fa fa-fw fa-google-plus"></i>
+                            <i class="fa fa-fw fa-instagram"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
                             <i class="fa fa-fw fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                            <i class="fa fa-fw fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                            <i class="fa fa-fw fa-dribbble"></i>
                         </a>
                     </li>
                 </ul>
@@ -51,7 +41,7 @@
 
 <div class="copyright py-4 text-center text-white">
     <div class="container">
-        <small>&copy; Film Box {{ date('Y') }}</small>
+        <small>&copy; Film Box {{ date('Y') }} - <a href="#">Privacy Policy</a> | <a href="#">Credits</a> </small>
     </div>
 </div>
 
