@@ -58,7 +58,22 @@
          </div>
          @endif
              @foreach($search_movie->results as $single_person)
-            
+                 <div class="spaced bg-light">
+                 <div class="row">
+                     <div class="col-md-6">
+                 <div class="person-img">
+                     <img class="img-poster" src="https://image.tmdb.org/t/p/w200{{ $single_person->profile_path }}">
+                 </div>
+                     </div>
+                     <div class="col-md-6">
+                <div class="person-detail">
+                    <h4><strong>{{ $single_person->name }}</strong></h4>
+                    <p>Popolarità: {{ $single_person->popularity }}</p>
+                </div>
+                     </div>
+                 </div>
+                 </div>
+                    <h3>Opere e materiali in cui è presente</h3>
                     @foreach($single_person->known_for as $single_celeb)
                     <div class="spaced">
                     <div class="row">
