@@ -472,14 +472,25 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
 
 /*------Icone votazione film---------------*/
 
+.votes-box {
+  border: 5px solid #ccc;
+  border-radius:5px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+#rated-message {
+  padding: 10px;
+}
+
 .rating-fields {
     margin-bottom:10px;
 }
 
 
 .star-cb-group input[type="radio"] {
-  width:3.6rem;
-  height:3.6rem;
+  width:3rem;
+  height:3rem;
 }
 
 input[type="radio"] + svg {
@@ -489,8 +500,8 @@ input[type="radio"] + svg {
 
 svg {
   fill:#666;
-  height: 3.6rem;
-  width: 3.6rem;
+  height: 3rem;
+  width: 3rem;
   margin: 0.2rem;
 }
 
