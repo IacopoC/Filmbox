@@ -63,6 +63,12 @@
                         </div>
                     @endforeach
                 </div>
+                <div class="row">
+                    <button class="btn-more-results">Più risultati</button>
+                         <div id="more-results">
+                         </div>
+                </div>
+
             </div>
         </div>
     </section>

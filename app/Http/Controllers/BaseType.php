@@ -155,6 +155,11 @@ class BaseType extends Controller
         return $this->buildMovieCall($id, 'release_dates');
     }
 
+    public function getCredits($id)
+    {
+        return $this->buildMovieCall($id, 'credits');
+    }
+
       public function getVideoTMovie($id) 
     {
         return $this->buildMovieCall($id, 'videos');

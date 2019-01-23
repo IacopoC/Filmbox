@@ -34,7 +34,9 @@ class FilmController extends Controller
 
         $trailer_obj = $this->basetype->getVideoTMovie($id);
 
-        return view('page-film', compact('film_obj','id', 'similar_obj','guest_tk','trailer_obj','dates_obj'));
+        $credits_obj = $this->basetype->getCredits($id);
+
+        return view('page-film', compact('film_obj','id', 'similar_obj','guest_tk','trailer_obj','dates_obj','credits_obj'));
 
     }
 
