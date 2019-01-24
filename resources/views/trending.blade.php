@@ -63,12 +63,13 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="row">
-                    <button class="btn-more-results">Più risultati</button>
-                         <div id="more-results">
-                         </div>
+                    <div class="col-lg-12">
+                    <div class="button-box">
+                    <button class="btn-secondary btn-more-results-trending">Più risultati  <i class="fa fa-fw fa-chevron-down"></i></button>
+                    </div>
+                        <div class="row more-results">
+                        </div>
                 </div>
-
             </div>
         </div>
     </section>

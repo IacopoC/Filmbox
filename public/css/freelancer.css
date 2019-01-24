@@ -470,6 +470,15 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
   text-decoration:none;
 }
 
+.button-box {
+  text-align:center;
+  padding:10px;
+
+}
+
+.btn-more-results-trending, .btn-more-results-upcoming {
+  padding:10px 20px;
+}
 /*------Icone votazione film---------------*/
 
 .votes-box {
