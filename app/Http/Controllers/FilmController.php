@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\Input;
-
 class FilmController extends Controller
 {
     public function __construct(BaseType $basetype)
@@ -49,7 +47,6 @@ class FilmController extends Controller
     public function sciFi()
     {
         $scifi_obj = $this->basetype->getDiscoverMovie('878');
-
 
         return view('best-scifi', compact('scifi_obj'));
     }

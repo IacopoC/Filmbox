@@ -8,9 +8,8 @@
     <div class="container">
         <div class="margin-up">
             <div class="row">
-        <div class="col-md-6">
-             <h4 class="text-uppercase auth-title">Attività Account {{ Auth::user()->name }}</h4>
-               <div class="margin-up"></div>
+        <div class="col-md-12">
+             <h4 class="text-uppercase auth-title">Film e materiali votati da {{ Auth::user()->name }}</h4>
                <div class="panel panel-primary">
                 
                     @if(!empty($rated_movies->results))
@@ -29,9 +28,8 @@
                     @endif   
         </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <h4 class="text-uppercase auth-title">Opzioni</h4>
-            <div class="margin-up"></div>
               <div class="panel panel-primary">
                  <div class="panel-heading"><h4>Esportazione ultimi film</h4></div>
                   <div class="margin-up-15">
