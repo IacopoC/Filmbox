@@ -19,6 +19,13 @@
                         </div>
 
                         <div class="col-md-6">
+                            <!--Sezione pulsanti liste-->
+                            @if (Auth::check())
+                            <div class="create-list-btn margin-left-85">
+                                <a href="{{ url('/create-list') }}"><button class="btn btn-info">Crea lista</button></a>
+                            </div>
+                             @endif
+                            <!--Fine sezione pulsanti liste-->
                          @if($film_obj->overview !='')   
                             <h3>Trama</h3>
                             <p>{{ $film_obj->overview }}</p>

@@ -479,6 +479,10 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
 .btn-more-results-trending, .btn-more-results-upcoming {
   padding:10px 20px;
 }
+
+.margin-left-85 {
+  margin-left:85%;
+}
 /*------Icone votazione film---------------*/
 
 .votes-box {

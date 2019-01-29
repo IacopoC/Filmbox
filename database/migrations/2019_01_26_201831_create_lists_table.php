@@ -18,7 +18,7 @@ class CreateListsTable extends Migration
             $table->integer('users_id',false);
             $table->string('name');
             $table->string('description');
-            $table->string('content');
+            $table->string('content')->nullable();
             $table->timestamps();
         });
     }

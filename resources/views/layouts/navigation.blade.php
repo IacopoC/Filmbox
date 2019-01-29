@@ -36,6 +36,9 @@
                                 <a href="{{ url('/profile') }}">Profilo</a>
                             </li>
                             <li>
+                                <a href="{{ url('/lists') }}">Liste</a>
+                            </li>
+                            <li>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
