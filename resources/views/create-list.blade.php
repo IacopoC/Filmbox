@@ -15,11 +15,11 @@
                         <form class="form-horizontal" method="POST" action="{{ action('ListsController@createLists') }}" id="list-form">
                             {{ csrf_field() }}
                             <div class="form-group">
-                                <label for="name" class="col-md-6 control-label">Nome lista</label>
+                                <label for="name" class="col-md-6 control-label create-list-l">Nome lista</label>
                                     <input id="name-field" type="text" class="form-control" name="name-field" required>
                             </div>
                             <div class="form-group">
-                                <label for="description" class="col-md-6 control-label">Descrizione lista</label>
+                                <label for="description" class="col-md-6 control-label create-list-l">Descrizione lista</label>
                                     <input id="description-field" type="text" class="form-control" name="description-field" required>
                             </div>
                             <input id="user-field" type="hidden" name="user-id" value="{{ $user_id }}">
@@ -30,6 +30,7 @@
                         </form>
                     </div>
                     <div class="col-md-6">
+                        <img src="{{ asset('images/filmbox-tickets.jpg') }}" class="img-fluid">
                     </div>
                 </div>
             </div>

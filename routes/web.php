@@ -28,11 +28,9 @@ Route::post('/profile', 'UserController@updateProfile');
 
 Route::get('/tk-generation', 'UserController@storeSession')->middleware('auth');
 
-Route::get('/thankyou', 'HomeController@index')->middleware('auth');
-
 Route::get('/create-list', 'ListsController@index')->middleware('auth');
 
-Route::post('/lists', 'ListsController@createLists')->middleware('auth');
+Route::post('/thankyou', 'ListsController@createLists')->middleware('auth');
 
 Route::get('/lists', 'ListsController@lists')->middleware('auth');
 

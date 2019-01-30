@@ -518,6 +518,15 @@ svg {
   margin: 0.2rem;
 }
 
+.control-label, .create-list-l {
+  font-weight:bold;
+  padding-left:0 !important;
+}
+
+.control-label-p {
+  font-weight:bold;
+}
+
 #radios label {
   position: relative;
 }

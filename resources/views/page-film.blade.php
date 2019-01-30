@@ -16,16 +16,16 @@
                             @if($film_obj->poster_path !='')
                         <img class="img-poster" src="https://image.tmdb.org/t/p/w400{{$film_obj->poster_path }}">
                             @endif
+                            <!--Sezione pulsanti liste-->
+                                @if (Auth::check())
+                                    <div class="create-list-btn mt-md-2 mb-md-2">
+                                        @include('layouts/create-list-btn')
+                                    </div>
+                            @endif
+                            <!--Fine sezione pulsanti liste-->
                         </div>
 
                         <div class="col-md-6">
-                            <!--Sezione pulsanti liste-->
-                            @if (Auth::check())
-                            <div class="create-list-btn margin-left-85">
-                                <a href="{{ url('/create-list') }}"><button class="btn btn-info">Crea lista</button></a>
-                            </div>
-                             @endif
-                            <!--Fine sezione pulsanti liste-->
                          @if($film_obj->overview !='')   
                             <h3>Trama</h3>
                             <p>{{ $film_obj->overview }}</p>
@@ -33,14 +33,12 @@
                             <?php foreach ($film_obj->genres as $film_genre):
                             $result_genre[] = $film_genre->name;
                             endforeach; ?>
-                             <?php $max_loop = 10;
-                             $count = 0; ?>
+
                             <h4>Cast</h4>
                             @foreach($credits_obj->cast as $credits_people)
                                     <?php $credits_arr[] = $credits_people->character . " (" . $credits_people->name . ")"; ?>
-                                <?php  $count++;
-                                    if($count == $max_loop){ break; } ?>
-                                @endforeach
+
+                             @endforeach
                                <p>{{ implode(", ",$credits_arr) }}</p>
 
                           @if(isset($result_genre))

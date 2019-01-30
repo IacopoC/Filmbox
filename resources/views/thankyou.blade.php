@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Grazie 
+    Lista creata - Filmbox
 @endsection
 @section('content')
  <section>
@@ -14,8 +14,8 @@
                 <div class="panel-heading"></div>
 
                 <div class="panel-body">
-                    <h3>Grazie per aver votato</h3>
-                    <a href="{{ url('/account') }}"><button type="button" class="btn btn-info">Torna all' account</button></a>
+                    <h3>Hai creato una lista</h3>
+                    <a href="{{ url('/lists') }}"><button type="button" class="btn btn-info">Torna all' elenco liste</button></a>
                 </div>
             </div>
         </div>

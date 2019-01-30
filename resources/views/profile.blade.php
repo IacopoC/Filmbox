@@ -72,7 +72,7 @@
                         {{ csrf_field() }}
                        
                           <div class="form-group">
-                            <label for="site_url" class="col-md-2 control-label">Città</label>
+                            <label for="site_url" class="col-md-4 control-label-p">Città</label>
 
                             <div class="col-md-9">
                               <div class="input-group">
@@ -83,7 +83,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="job_title" class="col-md-2 control-label">Stato</label>
+                            <label for="job_title" class="col-md-4 control-label-p">Stato</label>
 
                             <div class="col-md-9">
                                 <select id="country" class="form-control" name="country">
@@ -97,23 +97,17 @@
                         </div>
 
                           <div class="form-group">
-                            <label for="twitter_username" class="col-md-2 control-label">Twitter username</label>
-
+                            <label for="twitter_username" class="col-md-4 control-label-p">Twitter username</label>
                             <div class="col-md-9">
-                              
                                 <input id="email" type="text" class="form-control" name="twitter_username" value="@if(!empty($user->twitter_username)){{ $user->twitter_username }} @endif">
                               </div>
-                            
                         </div>
 
                            <div class="form-group">
-                            <label for="twitter_username" class="col-md-2 control-label">Instagram username</label>
-
+                            <label for="twitter_username" class="col-md-6 control-label-p">Instagram username</label>
                             <div class="col-md-9">
-                              
                                 <input id="email" type="text" class="form-control" name="instagram_username" value="@if(!empty($user->instagram_username)){{ $user->instagram_username }} @endif">
                               </div>
-                            
                         </div>
 
                         <div class="form-group">

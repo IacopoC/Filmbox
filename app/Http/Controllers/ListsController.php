@@ -40,13 +40,12 @@ class ListsController extends Controller
 
         $lists_data->save();
 
-        return view('lists');
+        return view('thankyou');
     }
 
     public function lists() {
 
         $id = Auth::user()->id;
-
         $all_lists = Lists::where('users_id', $id)->get();
 
         return view('lists', compact('all_lists'));
