@@ -3,6 +3,7 @@
 </div>
 <div class="col-md-6">
 <form name="list-insert" method="POST" action="{{ action('ListsController@updateMovie') }}">
+    {{ csrf_field() }}
      <div class="form-group">
          <label for="sel1">Seleziona una lista</label>
          <select class="form-control" id="sel1" name="list_select">

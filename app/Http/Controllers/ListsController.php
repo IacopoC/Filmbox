@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Lists;
 
+use Illuminate\Support\Facades\Input;
+
 use Illuminate\Support\Facades\Auth;
 
 class ListsController extends Controller
@@ -45,14 +47,16 @@ class ListsController extends Controller
 
     public function updateMovie(Request $request) {
 
-        $lists_data = new Lists();
+        $list_id = Input::get('list_select');
+
+        $movie_data = Lists::where('id','=',$list_id)->first();
 
         $this->validate(request(), [
-            'film_id' => 'integer',
+            'film_id' => 'max:50',
         ]);
 
-        $lists_data->film_id = request('content');
-        $lists_data->save();
+        $movie_data->content = request('film_id');
+        $movie_data->save();
 
         return view('thankyou-add');
 
