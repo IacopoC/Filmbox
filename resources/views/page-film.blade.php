@@ -18,7 +18,7 @@
                             @endif
                             <!--Sezione pulsanti liste-->
                                 @if (Auth::check())
-                                    <div class="create-list-btn mt-md-2 mb-md-2">
+                                    <div class="create-list-btn mt-md-5 mb-md-2">
                                         @include('layouts/create-list-btn')
                                     </div>
                             @endif

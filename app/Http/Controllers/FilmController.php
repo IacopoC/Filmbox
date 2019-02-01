@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Lists;
+
+use Illuminate\Support\Facades\Auth;
 
 class FilmController extends Controller
 {
@@ -16,6 +18,16 @@ class FilmController extends Controller
         $guest_tk = \DB::table('users')->value('guest_session_tk');
 
         return $guest_tk;
+    }
+
+       public function getLists()
+    {
+        if(Auth::check()) {
+            $id = Auth::user()->id;
+            $all_lists = Lists::where('users_id', $id)->get();
+
+            return $all_lists;
+        }
     }
     
 
@@ -34,7 +46,9 @@ class FilmController extends Controller
 
         $credits_obj = $this->basetype->getCredits($id);
 
-        return view('page-film', compact('film_obj','id', 'similar_obj','guest_tk','trailer_obj','dates_obj','credits_obj'));
+        $lists = $this->getLists();
+
+        return view('page-film', compact('film_obj','id', 'similar_obj','guest_tk','trailer_obj','dates_obj','credits_obj','lists'));
 
     }
 

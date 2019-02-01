@@ -16,9 +16,6 @@
                         <p> {{ $list->description }}</p>
                         </div>
                         @endforeach
-                    <div class="mt-md-5 mb-md-5">
-                    @include('layouts/create-list-btn')
-                    </div>
                 </div>
             </div>
         </div>

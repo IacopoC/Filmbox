@@ -32,6 +32,8 @@ Route::get('/create-list', 'ListsController@index')->middleware('auth');
 
 Route::post('/thankyou', 'ListsController@createLists')->middleware('auth');
 
+Route::post('/thankyou-add', 'ListsController@updateMovie')->middleware('auth');
+
 Route::get('/lists', 'ListsController@lists')->middleware('auth');
 
 Route::get('/', 'GeneralController@index');

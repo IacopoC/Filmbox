@@ -43,6 +43,21 @@ class ListsController extends Controller
         return view('thankyou');
     }
 
+    public function updateMovie(Request $request) {
+
+        $lists_data = new Lists();
+
+        $this->validate(request(), [
+            'film_id' => 'integer',
+        ]);
+
+        $lists_data->film_id = request('content');
+        $lists_data->save();
+
+        return view('thankyou-add');
+
+    }
+
     public function lists() {
 
         $id = Auth::user()->id;

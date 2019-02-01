@@ -486,8 +486,6 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
 /*------Icone votazione film---------------*/
 
 .votes-box {
-  border: 5px solid #ccc;
-  border-radius:5px;
   padding: 10px;
   margin: 5px 0;
 }
