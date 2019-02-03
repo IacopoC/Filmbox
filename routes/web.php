@@ -28,13 +28,13 @@ Route::post('/profile', 'UserController@updateProfile');
 
 Route::get('/tk-generation', 'UserController@storeSession')->middleware('auth');
 
-Route::get('/create-list', 'ListsController@index')->middleware('auth');
+Route::get('/create-list', 'ListsController@createList')->middleware('auth');
 
 Route::post('/thankyou', 'ListsController@createLists')->middleware('auth');
 
 Route::post('/thankyou-add', 'ListsController@updateMovie')->middleware('auth');
 
-Route::get('/lists', 'ListsController@lists')->middleware('auth');
+Route::get('/lists', 'ListsController@index')->middleware('auth');
 
 Route::get('/', 'GeneralController@index');
 

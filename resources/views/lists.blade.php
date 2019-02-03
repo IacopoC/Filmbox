@@ -15,7 +15,15 @@
                         <h4>{{ $list->name }}</h4>
                         <p> {{ $list->description }}</p>
                         </div>
+                        @foreach($films as $film)
+                        @if( $list->id === $film->lists_id )
+                               {{ $film->content }}
+                            @endif
+                                @endforeach
                         @endforeach
+                        <div class="mt-md-5">
+                            @include('layouts/create-list-btn')
+                        </div>
                 </div>
             </div>
         </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Films;
+
 use Illuminate\Http\Request;
 
 use App\Lists;
@@ -18,7 +20,7 @@ class ListsController extends Controller
     }
 
 
-    public function index() {
+    public function createList() {
 
         if (Auth::check())  {
             $user_id = Auth::user()->id;
@@ -26,6 +28,30 @@ class ListsController extends Controller
 
         return view('create-list', compact('user_id'));
     }
+
+    public function getMoviesforLists($id) {
+
+        $all_films = Films::with('lists')->find($id);
+        return $all_films;
+
+    }
+
+    public function index() {
+
+        $id = Auth::user()->id;
+        $all_lists = Lists::where('users_id', $id)->get();
+
+        $film_id = Films::where('id',">",0)->get();
+
+        foreach($film_id as $film) {
+            $films[] = $this->getMoviesforLists($film->id);
+            $film_obj = $this->basetype->getMovie($film->content);
+        }
+
+        return view('lists', compact('all_lists','films','film_obj'));
+
+    }
+
 
     public function createLists(Request $request) {
 
@@ -47,26 +73,19 @@ class ListsController extends Controller
 
     public function updateMovie(Request $request) {
 
-        $list_id = Input::get('list_select');
-
-        $movie_data = Lists::where('id','=',$list_id)->first();
+        $movie_data = new Films();
 
         $this->validate(request(), [
+            'list_select' => 'max:50',
             'film_id' => 'max:50',
         ]);
 
         $movie_data->content = request('film_id');
+        $movie_data->lists_id = request('list_select');
         $movie_data->save();
 
         return view('thankyou-add');
 
     }
 
-    public function lists() {
-
-        $id = Auth::user()->id;
-        $all_lists = Lists::where('users_id', $id)->get();
-
-        return view('lists', compact('all_lists'));
-    }
 }

@@ -10,4 +10,10 @@ class Lists extends Model
     {
         return $this->belongsTo('App\Users');
     }
+
+    public function films()
+    {
+
+        return $this->hasMany('App\Films');
+    }
 }
