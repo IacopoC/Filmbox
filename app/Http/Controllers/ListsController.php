@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 
 use App\Lists;
 
-use Illuminate\Support\Facades\Input;
-
 use Illuminate\Support\Facades\Auth;
 
 class ListsController extends Controller
@@ -45,10 +43,9 @@ class ListsController extends Controller
 
         foreach($film_id as $film) {
             $films[] = $this->getMoviesforLists($film->id);
-            $film_obj = $this->basetype->getMovie($film->content);
         }
 
-        return view('lists', compact('all_lists','films','film_obj'));
+        return view('lists', compact('all_lists','films'));
 
     }
 

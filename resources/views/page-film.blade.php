@@ -19,10 +19,10 @@
                             <!--Sezione pulsanti liste-->
                                 @if (Auth::check())
                                     <div class="create-list-btn mt-md-5 mb-md-2">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                         @include('layouts/create-list-btn')
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
                                             <form name="list-insert" method="POST" action="{{ action('ListsController@updateMovie') }}">
                                                 {{ csrf_field() }}
                                                 <div class="form-group">
