@@ -14,12 +14,13 @@
                         <div class="bg-light mt-md-5 p-3">
                         <h4>{{ $list->name }}</h4>
                         <p> {{ $list->description }}</p>
-
+                        @if(!empty($films))
                         @foreach($films as $film)
                         @if( $list->id === $film->lists_id )
-                            <p><strong>Film ID:</strong> <a href="page-film/{{ $film->content }}"> {{ $film->content }}</a></p>
+                            <p><a href="page-film/{{ $film->content }}"> {{ $film->content_name }}</a></p>
                             @endif
                                 @endforeach
+                            @endif
                         </div>
                         @endforeach
                         <div class="mt-md-5">

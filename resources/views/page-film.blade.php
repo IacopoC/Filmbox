@@ -35,6 +35,9 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
+                                                    <input type="hidden" name="film_name" value="{{ $film_obj->title }}">
+                                                </div>
+                                                <div class="form-group">
                                                     <input type="hidden" name="film_id" value="{{ $id }}">
                                                 </div>
                                                 <div class="form-group">
@@ -151,8 +154,6 @@
                         <div class="col-md-12">
                             <h3>Film simili da scoprire:</h3>
                         </div>
-                        <?php $max_loop = 6; 
-                        $count = 0; ?>
                     @foreach($similar_obj->results as $similar_movie)
                       <div class="col-md-7 col-lg-2">
                             <a href="{{ $similar_movie->id }}">
@@ -162,9 +163,6 @@
                          <p class="title-movie">{{$similar_movie->title }}</p>
                         </a>
                       </div>
-                      <?php
-                      $count++;
-                      if($count == $max_loop){ break; } ?>
                     @endforeach
                 </div>
              </div>

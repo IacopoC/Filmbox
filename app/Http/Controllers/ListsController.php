@@ -44,8 +44,10 @@ class ListsController extends Controller
         foreach($film_id as $film) {
             $films[] = $this->getMoviesforLists($film->id);
         }
-
-        return view('lists', compact('all_lists','films'));
+        if(empty($films)) {
+            return view('lists', compact('all_lists'));
+        }
+          return view('lists', compact('all_lists', 'films'));
 
     }
 
@@ -77,6 +79,7 @@ class ListsController extends Controller
             'film_id' => 'max:50',
         ]);
 
+        $movie_data->content_name = request('film_name');
         $movie_data->content = request('film_id');
         $movie_data->lists_id = request('list_select');
         $movie_data->save();
