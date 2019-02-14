@@ -32,8 +32,6 @@ Route::get('/create-list', 'ListsController@createList')->middleware('auth');
 
 Route::post('/thankyou', 'ListsController@createLists')->middleware('auth');
 
-Route::post('/thankyou-add', 'ListsController@updateMovie')->middleware('auth');
-
 Route::get('/lists', 'ListsController@index')->middleware('auth');
 
 Route::get('/', 'GeneralController@index');
@@ -47,6 +45,8 @@ Route::get('/upcoming', 'GeneralController@upcoming');
 Route::get('/page-film/{id}', 'FilmController@index');
 
 Route::post('/page-film/{id}','UserController@storeratingRequest');
+
+Route::post('/page-film/{id}', 'ListsController@updateMovie')->middleware('auth');
 
 Route::get('/best-scifi', 'FilmController@sciFi');
 

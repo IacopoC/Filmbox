@@ -84,8 +84,6 @@ class ListsController extends Controller
         $movie_data->lists_id = request('list_select');
         $movie_data->save();
 
-        return view('thankyou-add');
-
     }
 
 }

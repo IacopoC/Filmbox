@@ -19,15 +19,18 @@
                             <!--Sezione pulsanti liste-->
                                 @if (Auth::check())
                                     <div class="create-list-btn mt-md-5 mb-md-2">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3>Crea o scegli liste</h3>
+                                            </div>
                                         <div class="col-md-4">
                                         @include('layouts/create-list-btn')
                                         </div>
                                         <div class="col-md-8">
-                                            <form name="list-insert" method="POST" action="{{ action('ListsController@updateMovie') }}">
+                                            <form id="insert-list" name="list-insert">
                                                 {{ csrf_field() }}
                                                 <div class="form-group">
-                                                    <label for="sel1">Seleziona una lista</label>
-                                                    <select class="form-control" id="sel1" name="list_select">
+                                                    <select class="form-control" id="list-select" name="list_select">
                                                         <option>Scegli una lista</option>
                                                         @foreach($lists as $list)
                                                             <option value="{{ $list->id }}">{{ $list->name }}</option>
@@ -35,15 +38,17 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="hidden" name="film_name" value="{{ $film_obj->title }}">
+                                                    <input type="hidden" name="film_name" id="film-name" value="{{ $film_obj->title }}">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="hidden" name="film_id" value="{{ $id }}">
+                                                    <input type="hidden" name="film_id" id="film-id" value="{{ $id }}">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="submit" class="btn btn-primary" value="Aggiungi film">
+                                                    <input type="submit" class="btn btn-primary" id="lista-film-submit" value="Aggiungi film">
                                                 </div>
                                             </form>
+                                        </div>
+                                            <p id="list-message"></p>
                                         </div>
                                     </div>
                             @endif
@@ -198,5 +203,40 @@
         xhr.send(param);
     }
 
+    $(document).ready(function() {
+
+        $( "#lista-film-submit" ).click(function(event) {
+
+            event.preventDefault();
+            let film_id = $('#film-id').val();
+            let film_name = $('#film-name').val();
+            let list_id = $('#list-select').val();
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                data: {
+                    "film_id": film_id,
+                    "film_name": film_name,
+                    "list_select": list_id,
+                    "_token": '{{ csrf_token() }}'
+                },
+
+                success: function(result){
+                    $('#list-message').html('Film aggiunto alla lista <a href="/lists">Elenco liste <i class="fa fa-arrow-right"></a>' + result);
+                },
+
+                error: function (request,error) {
+                    console.log("Request: " + JSON.stringify(request));
+                    console.log(error);
+                }
+            })
+        })
+    });
          </script>
 @endsection

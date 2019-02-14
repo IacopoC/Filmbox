@@ -15,11 +15,13 @@
                         <h4>{{ $list->name }}</h4>
                         <p> {{ $list->description }}</p>
                         @if(!empty($films))
+                                <p>
                         @foreach($films as $film)
                         @if( $list->id === $film->lists_id )
-                            <p><a href="page-film/{{ $film->content }}"> {{ $film->content_name }}</a></p>
+                            <a href="page-film/{{ $film->content }}"> {{ $film->content_name }}</a> |
                             @endif
                                 @endforeach
+                                </p>
                             @endif
                         </div>
                         @endforeach

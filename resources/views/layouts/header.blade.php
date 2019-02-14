@@ -9,6 +9,10 @@
      <!-- Bootstrap core CSS -->
      <link href="{{ asset('css/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
+      <!-- Bootstrap core JavaScript -->
+      <script src="{{asset('css/jquery/jquery.js')}}"></script>
+      <script src="{{asset('css/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
      <!-- Custom fonts for this template -->
      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
      <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
