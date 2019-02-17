@@ -26,7 +26,7 @@
              <p><strong>Iscritto dal:</strong> {{ date('d M Y', $user->created_at->timestamp) }}</p>
 
              @if(!empty($user->country))
-            <p>{{ $user->country }},
+            <p><strong>Provenienza:</strong> {{ $user->country }},
             @endif
             @if(!empty($user->hometown))
             {{ $user->hometown }}</p>

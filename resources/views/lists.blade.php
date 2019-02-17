@@ -15,18 +15,22 @@
                         <h4>{{ $list->name }}</h4>
                         <p> {{ $list->description }}</p>
                         @if(!empty($films))
-                                <p>
+
+
                         @foreach($films as $film)
                         @if( $list->id === $film->lists_id )
-                             <a href="page-film/{{ $film->content }}"> {{ $film->content_name }}</a>
-                                  <form id="film-form" method="POST" action="{{ action('ListsController@deleteMovie') }}">
+                            <div class="list-film">
+                             <a class="d-inline" href="page-film/{{ $film->content }}"> {{ $film->content_name }}</a>
+                                  <form id="film-form" class="d-inline" method="POST" action="{{ action('ListsController@deleteMovie') }}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="film_id" id="film-id" value="{{ $film->id }}">
-                                      <button type="submit" id="film-submit"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                      <button type="submit" id="film-submit" class="btn-light"><i class="fa fa-times" aria-hidden="true"></i></button>
                                   </form>
+                            </div>
                             @endif
                                 @endforeach
-                                </p>
+
+
                             @endif
                         </div>
                         @endforeach

@@ -483,11 +483,25 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
 .margin-left-85 {
   margin-left:85%;
 }
+
+/*------Stile pagina liste---------------*/
+
+.list-film {
+  padding:10px 0;
+}
+
+.btn-light {
+  border-radius:50px;
+}
+
 /*------Icone votazione film---------------*/
 
 .votes-box {
   padding: 10px;
   margin: 5px 0;
+  background-color: #f2f2f2;
+  border: 2px solid #ccc;
+  border-radius: 10px;
 }
 
 #rated-message {

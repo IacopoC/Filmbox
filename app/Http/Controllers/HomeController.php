@@ -17,6 +17,7 @@ class HomeController extends Controller
     public function __construct(BaseType $basetype)
     {
         $this->basetype = $basetype;
+
         $this->middleware('auth');
     }
 
