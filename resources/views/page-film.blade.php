@@ -231,9 +231,8 @@
                     $('#list-message').html('Film aggiunto alla lista <a href="/lists">Elenco liste <i class="fa fa-arrow-right"></a>' + result);
                 },
 
-                error: function (request,error) {
+                error: function (request) {
                     console.log("Request: " + JSON.stringify(request));
-                    console.log(error);
                 }
             })
         })

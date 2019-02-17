@@ -18,7 +18,12 @@
                                 <p>
                         @foreach($films as $film)
                         @if( $list->id === $film->lists_id )
-                            <a href="page-film/{{ $film->content }}"> {{ $film->content_name }}</a> |
+                             <a href="page-film/{{ $film->content }}"> {{ $film->content_name }}</a>
+                                  <form id="film-form" method="POST" action="{{ action('ListsController@deleteMovie') }}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="film_id" id="film-id" value="{{ $film->id }}">
+                                      <button type="submit" id="film-submit"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                  </form>
                             @endif
                                 @endforeach
                                 </p>

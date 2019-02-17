@@ -38,7 +38,6 @@ class ListsController extends Controller
 
         $id = Auth::user()->id;
         $all_lists = Lists::where('users_id', $id)->get();
-
         $film_id = Films::where('id',">",0)->get();
 
         foreach($film_id as $film) {
@@ -83,6 +82,15 @@ class ListsController extends Controller
         $movie_data->content = request('film_id');
         $movie_data->lists_id = request('list_select');
         $movie_data->save();
+
+    }
+
+    public function deleteMovie(Request $request) {
+
+        $film_id = request('film_id');
+        Films::where('id',"=",$film_id)->delete();
+
+        return view('thankyou-delete');
 
     }
 
