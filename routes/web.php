@@ -36,6 +36,8 @@ Route::get('/lists', 'ListsController@index')->middleware('auth');
 
 Route::post('/thankyou-delete', 'ListsController@deleteMovie')->middleware('auth');
 
+Route::post('/thankyou-list', 'ListsController@deleteLists')->middleware('auth');
+
 Route::get('/', 'GeneralController@index');
 
 Route::get('/search', 'GeneralController@search');

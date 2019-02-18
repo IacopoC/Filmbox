@@ -94,4 +94,13 @@ class ListsController extends Controller
 
     }
 
+
+    public function deleteLists() {
+        $list_id = request('lists_id');
+
+        Lists::where('id',"=",$list_id)->delete();
+        Films::where('lists_id',"=",$list_id)->delete();
+
+        return view('thankyou-list');
+    }
 }

@@ -13,9 +13,14 @@
                     @foreach( $all_lists as $list)
                         <div class="bg-light mt-md-5 p-3">
                         <h4>{{ $list->name }}</h4>
-                        <p> {{ $list->description }}</p>
-                        @if(!empty($films))
+                        <p>{{ $list->description }}</p>
+                            <form id="list-form" method="POST" action="{{ action('ListsController@deleteLists') }}">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="lists_id" id="list-id" value="{{ $list->id }}">
+                                <button type="submit" id="film-submit" class="btn-warning">Delete</button>
+                            </form>
 
+                        @if(!empty($films))
 
                         @foreach($films as $film)
                         @if( $list->id === $film->lists_id )
