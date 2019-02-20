@@ -34,7 +34,7 @@ Route::post('/thankyou', 'ListsController@createLists')->middleware('auth');
 
 Route::get('/lists', 'ListsController@index')->middleware('auth');
 
-Route::post('/thankyou-delete', 'ListsController@deleteMovie')->middleware('auth');
+Route::post('/lists', 'ListsController@deleteMovie')->middleware('auth');
 
 Route::post('/thankyou-list', 'ListsController@deleteLists')->middleware('auth');
 

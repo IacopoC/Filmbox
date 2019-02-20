@@ -126,7 +126,7 @@
 <script>
   function confirmFunction() {
     if(confirm("Cliccando Ok, perderai i film e i materiali che hai votato e genererai un nuovo token")== true ) {
-      window.location.href = "http://homestead.test/tk-generation"
+      window.location.href = "/tk-generation"
 }
   }
 </script>

@@ -12,11 +12,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ListsController extends Controller
 {
-    public function __construct(BaseType $basetype)
-    {
-        $this->basetype = $basetype;
-    }
-
 
     public function createList() {
 
@@ -34,15 +29,32 @@ class ListsController extends Controller
 
     }
 
-    public function index() {
+    public function getallLists() {
 
         $id = Auth::user()->id;
-        $all_lists = Lists::where('users_id', $id)->get();
+        $lists = Lists::where('users_id', $id)->get();
+
+        return $lists;
+    }
+
+
+    public function getallFilms() {
+
         $film_id = Films::where('id',">",0)->get();
 
         foreach($film_id as $film) {
             $films[] = $this->getMoviesforLists($film->id);
         }
+
+        return $films;
+    }
+
+    public function index() {
+
+        $all_lists = $this->getallLists();
+        $films = $this->getallFilms();
+
+
         if(empty($films)) {
             return view('lists', compact('all_lists'));
         }
@@ -90,7 +102,13 @@ class ListsController extends Controller
         $film_id = request('film_id');
         Films::where('id',"=",$film_id)->delete();
 
-        return view('thankyou-delete');
+        $all_lists = $this->getallLists();
+        $films = $this->getallFilms();
+
+        if(empty($films)) {
+            return view('lists', compact('all_lists'));
+        }
+        return view('lists', compact('all_lists', 'films'));
 
     }
 
