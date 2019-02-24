@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Lists;
 
+use App\User;
+
 use Illuminate\Support\Facades\Auth;
 
 class FilmController extends Controller
@@ -15,14 +17,20 @@ class FilmController extends Controller
 
         public function getguestSessionTk()
     {
-        $guest_tk = \DB::table('users')->value('guest_session_tk');
+        if (Auth::check())
+        {
+            $id = Auth::user()->id;
 
-        return $guest_tk;
+            $guest_tk = User::where('id', '=', $id)->value('guest_session_tk');
+
+            return $guest_tk;
+        }
     }
 
        public function getLists()
     {
-        if(Auth::check()) {
+        if(Auth::check())
+        {
             $id = Auth::user()->id;
             $all_lists = Lists::where('users_id', $id)->get();
 

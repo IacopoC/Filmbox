@@ -16,10 +16,10 @@
                 </li>
                 @guest
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="{{ setActive('login', 'active') }} nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/login') }}">Login</a>
+                    <a class="{{ setActive('login', 'active') }} nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/login') }}">Accedi</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="{{ setActive('register', 'active') }} nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/register') }}">Register</a>
+                    <a class="{{ setActive('register', 'active') }} nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/register') }}">Registrati</a>
                 </li>
                 @else
                     <li class="dropdown">

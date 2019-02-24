@@ -4,18 +4,18 @@
     <section>
 <div class="container">
     <div class="margin-up">
-    <h4 class="text-uppercase">Login</h4>
     <div class="row">
         <div class="col-md-6 col-md-offset-2">
+            <h4 class="text-uppercase auth-title">Login</h4>
             <div class="panel panel-default">
                 <div class="panel-heading"></div>
 
-                <div class="panel-body">
+                <div class="panel-body mt-4">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col-md-4 control-label">E-Mail</label>
                           
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
@@ -40,7 +40,7 @@
                         <div class="form-group">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Memorizza accesso
                                     </label>
                                 </div>
                         </div>
@@ -51,7 +51,7 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
+                                    Password dimenticata?
                                 </a>  
                         </div>
                     </form>
@@ -59,7 +59,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <img src="{{asset('images/coupon.png')}}" width="100%">
+            <img src="{{asset('images/filmbox-login.jpg')}}" class="img-fluid mt-5">
         </div>
     </div>
     </div>

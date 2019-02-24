@@ -31,9 +31,14 @@ class UserController extends Controller
 
     public function getguestSessionTk()
     {
-        $guest_tk = \DB::table('users')->value('guest_session_tk');
+        if (Auth::check())
+        {
+            $id = Auth::user()->id;
+
+        $guest_tk = User::where('id','=', $id)->value('guest_session_tk');
 
         return $guest_tk;
+        }
     }
 
     public function storeSession(Request $request)

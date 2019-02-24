@@ -25,11 +25,15 @@
                     </div>
                     @endforeach
                      </div>
-                    @endif   
+                    @else
+                       <div class="alert alert-info" role="alert">
+                           Non hai ancora votato nessun film
+                       </div>
+                   @endif
         </div>
         </div>
         <div class="col-md-12">
-            <h4 class="text-uppercase auth-title">Opzioni</h4>
+            <h4 class="text-uppercase auth-title mt-5">Opzioni</h4>
               <div class="panel panel-primary">
                  <div class="panel-heading"><h4>Esportazione ultimi film</h4></div>
                   <div class="margin-up-15">

@@ -10,6 +10,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h4 class="text-uppercase auth-title">Liste create da {{ Auth::user()->name }}</h4>
+
                     @foreach( $all_lists as $list)
                         <div class="bg-light mt-md-5 p-3">
                         <h4>{{ $list->name }}</h4>

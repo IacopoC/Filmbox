@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="button-box">
-                        <button class="btn-secondary btn-more-results-upcoming">Più risultati  <i class="fa fa-fw fa-chevron-down"></i></button>
+                        <button class="btn-secondary btn-more-results-upcoming">Mostra più risultati  <i class="fa fa-fw fa-chevron-down"></i></button>
                     </div>
                     <div class="row more-results-upcoming">
                     </div>
