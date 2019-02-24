@@ -402,6 +402,7 @@ a:focus, a:hover, a:active {
 }
 
 .spaced {
+  border-radius:10px;
   padding:20px;
 }
 
@@ -487,12 +488,19 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
 /*------Stile pagina liste---------------*/
 
 .list-film {
+  border-radius: 10px;
   padding:10px 0;
+}
+
+.list-film h5 a {
+  color:#000000;
 }
 
 .btn-light {
   border-radius:50px;
 }
+
+
 
 /*------Icone votazione film---------------*/
 
@@ -500,7 +508,6 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
   padding: 10px;
   margin: 5px 0;
   background-color: #f2f2f2;
-  border: 2px solid #ccc;
   border-radius: 10px;
 }
 
