@@ -18,7 +18,7 @@
                             <form id="list-form" method="POST" action="{{ action('ListsController@deleteLists') }}" onsubmit="return confirm('Cancellando una lista eliminerai il suo contenuto.');">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="lists_id" id="list-id" value="{{ $list->id }}">
-                                <button type="submit" class="btn-warning">Cancella</button>
+                                <button type="submit" class="btn btn-warning">Cancella</button>
                             </form>
 
                         @if(!empty($films))
@@ -30,7 +30,7 @@
                                   <form id="film-form" class="d-inline" method="POST">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="film_id" id="film-id" value="{{ $film->id }}">
-                                      <button type="submit" id="film-submit" class="btn-light"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                      <button type="submit" id="film-submit" class="btn btn-light"><i class="fa fa-times" aria-hidden="true"></i></button>
                                   </form>
                              </h5>
                             </div>
