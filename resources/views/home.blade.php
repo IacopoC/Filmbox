@@ -16,7 +16,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Benvenuto nell'area riservata di Film Box!
+                    <p>Benvenuto nell'area riservata di Film Box!</p>
+                        <a href="{{ url('/profile') }}"><button type="button" class="btn btn-info">Vai al profilo</button></a>
                 </div>
             </div>
         </div>
