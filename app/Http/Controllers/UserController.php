@@ -78,13 +78,15 @@ class UserController extends Controller
             'country' => 'nullable|max:255',
             'hometown' => 'nullable|max:255',
             'twitter_username' =>'nullable|max:255',
-            'instagram_username' =>'nullable|max:255'
+            'instagram_username' =>'nullable|max:255',
+            'facebook_username' =>'nullable|max:255'
             ]);
     
             $user->country = request('country');
             $user->hometown = request('hometown');
             $user->twitter_username = request('twitter_username');
             $user->instagram_username = request('instagram_username');
+            $user->facebook_username = request('facebook_username');
             
             $user->save();
 

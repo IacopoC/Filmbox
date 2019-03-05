@@ -7,7 +7,7 @@
     <section>
         <div class="container">
             <div class="margin-up">
-                <h2>Film in arrivo</h2>
+                <h2>Film in arrivo in sala</h2>
                 <div class="padding-updown"></div>
                 <div class="row">
                     @foreach ($upcoming_obj->results as $upcoming_movie)

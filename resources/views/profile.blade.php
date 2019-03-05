@@ -42,6 +42,11 @@
             <a href="https://instagram.com/{{ $user->instagram_username }}" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
             </div>
             @endif
+            @if(!empty($user->facebook_username))
+                <div class="social-box">
+                    <a href="https://facebook.com/{{ $user->facebook_username }}" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+                </div>
+            @endif
                <div class="panel panel-primary">
                 
                     @if(!empty($rated_movies->results))
@@ -99,16 +104,23 @@
                           <div class="form-group">
                             <label for="twitter_username" class="col-md-4 control-label-p">Twitter username</label>
                             <div class="col-md-9">
-                                <input id="email" type="text" class="form-control" name="twitter_username" value="@if(!empty($user->twitter_username)){{ $user->twitter_username }} @endif">
+                                <input id="social-tw" type="text" class="form-control" name="twitter_username" value="@if(!empty($user->twitter_username)){{ $user->twitter_username }} @endif">
                               </div>
                         </div>
 
                            <div class="form-group">
-                            <label for="twitter_username" class="col-md-6 control-label-p">Instagram username</label>
+                            <label for="instagram_username" class="col-md-6 control-label-p">Instagram username</label>
                             <div class="col-md-9">
-                                <input id="email" type="text" class="form-control" name="instagram_username" value="@if(!empty($user->instagram_username)){{ $user->instagram_username }} @endif">
+                                <input id="social-ig" type="text" class="form-control" name="instagram_username" value="@if(!empty($user->instagram_username)){{ $user->instagram_username }} @endif">
                               </div>
                         </div>
+
+                            <div class="form-group">
+                            <label for="facebook_username" class="col-md-6 control-label-p">Facebook username</label>
+                            <div class="col-md-9">
+                            <input id="social-fb" type="text" class="form-control" name="facebook_username" value="@if(!empty($user->facebook_username)){{ $user->facebook_username }} @endif">
+                            </div>
+                            </div>
 
                         <div class="form-group">
                             <div class="col-md-9 col-md-offset-2">

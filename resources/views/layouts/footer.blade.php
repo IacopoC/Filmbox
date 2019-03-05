@@ -20,17 +20,12 @@
                 <p class="lead mb-0">FilmBox è realizzata ma non supportata da <a href="http://themoviedb.org" target="_blank">TMDB</a>.</p>
                 <div class="social pt-3">
                 <li class="list-inline-item">
-                    <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                    <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://www.facebook.com/sharer/sharer.php?u=#">
                         <i class="fa fa-fw fa-facebook"></i>
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-                        <i class="fa fa-fw fa-instagram"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                    <a class="btn btn-outline-light btn-social text-center rounded-circle" href="http://twitter.com/share?text=Scopri FilmBox, per cercare e salvare i tuoi film preferiti&url=https://filmbox.it&hashtags=filmbox">
                         <i class="fa fa-fw fa-twitter"></i>
                     </a>
                 </li>
