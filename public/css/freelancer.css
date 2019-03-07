@@ -385,6 +385,7 @@ a:focus, a:hover, a:active {
   border-color: #1a252f;
 }
 
+/*----- Ricerca film -----*/
 
 .searchfilm-field {
   width:60%;
@@ -485,7 +486,7 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
   margin-left:85%;
 }
 
-/*------Stile pagina liste---------------*/
+/*------Pagina liste-------*/
 
 .list-film {
   border-radius: 10px;
@@ -502,7 +503,7 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
 
 
 
-/*------Icone votazione film---------------*/
+/*------Icone votazione film----------*/
 
 .votes-box {
   padding: 10px;
@@ -586,4 +587,33 @@ input[class="sad"]:hover + svg,
 input[class="sad"]:checked + svg,
 input[class="sad"]:focus + svg {
   fill: rgb(229, 132, 0);
+}
+
+/*--- Cookie banner ---*/
+
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  padding: 30px;
+  background-color: #000;
+  color: #fff;
+
+}
+
+.cookie-consent button {
+  background-color:#fff;
+  border:0;
+  padding:5px 10px;
+  margin: 0 0 0 20px;
+  color:#000;
+}
+
+@media (min-width: 576px) {
+
+  .cookie-consent button {
+    margin:20px 20px 20px 20px;
+  }
 }

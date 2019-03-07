@@ -37,9 +37,10 @@
 
 <div class="copyright py-4 text-center text-white">
     <div class="container">
-        <small>&copy; Film Box {{ date('Y') }} - <a href="#">Privacy Policy</a> | <a href="#">Credits</a> </small>
+        <small>&copy; Film Box {{ date('Y') }} - <a href="{{ url('/privacy-cookie') }}">Privacy Policy e Cookie Policy</a> | <a href="https://iacopocutino.it" target="_blank">Credits</a> </small>
     </div>
 </div>
+@include('cookieConsent::index')
 
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 <div class="scroll-to-top d-lg-none position-fixed ">

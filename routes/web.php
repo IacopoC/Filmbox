@@ -46,6 +46,8 @@ Route::get('/trending', 'GeneralController@trending');
 
 Route::get('/upcoming', 'GeneralController@upcoming');
 
+Route::get('/privacy-cookie', 'GeneralController@privacyCookie');
+
 Route::get('/page-film/{id}', 'FilmController@index');
 
 Route::post('/page-film/{id}','UserController@storeratingRequest');

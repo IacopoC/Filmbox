@@ -44,5 +44,10 @@ class GeneralController extends Controller
         return view('upcoming', compact('upcoming_obj'));
     }
 
+    public function privacyCookie() {
+
+        return view('privacy-cookie');
+    }
+
     
 }
