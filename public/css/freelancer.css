@@ -385,6 +385,10 @@ a:focus, a:hover, a:active {
   border-color: #1a252f;
 }
 
+.card-header {
+  padding:0.25rem 0rem;
+}
+
 /*----- Ricerca film -----*/
 
 .searchfilm-field {
@@ -535,7 +539,7 @@ svg {
   fill:#666;
   height: 3rem;
   width: 3rem;
-  margin: 0.2rem;
+  margin:0;
 }
 
 .control-label, .create-list-l {
