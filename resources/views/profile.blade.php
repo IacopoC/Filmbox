@@ -21,9 +21,9 @@
         <div class="col-md-6">
             <h4 class="text-uppercase auth-title">Profilo {{ $user->name }}</h4>
             <div class="margin-up"></div>
-             <p><strong>Email:</strong> {{ $user->email }} </p>
-             <p><strong>Token:</strong> {{ $user->guest_session_tk }} <button onClick="confirmFunction()" class="btn btn-warning float-right" alt="rigenera-token">Rigenera</button></p>
-             <p><strong>Iscritto dal:</strong> {{ date('d M Y', $user->created_at->timestamp) }}</p>
+                <p><strong>Email:</strong> {{ $user->email }} </p>
+                <p>@if(!empty($user->guest_session_tk)) <strong>Token:</strong> {{ $user->guest_session_tk }} @endif <button onClick="confirmFunction()" class="btn btn-warning float-right" alt="rigenera-token">Genera Token</button></p>
+            <p><strong>Iscritto dal:</strong> {{ date('d M Y', $user->created_at->timestamp) }}</p>
 
              @if(!empty($user->country))
             <p><strong>Provenienza:</strong> {{ $user->country }},
@@ -34,12 +34,12 @@
        
             @if(!empty($user->twitter_username))
             <div class="social-box">
-            <a href="https://twitter.com/{{ $user->twitter_username }}" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                <a href="https://twitter.com/{{ $user->twitter_username }}" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
             </div>
             @endif
             @if(!empty($user->instagram_username))
             <div class="social-box">
-            <a href="https://instagram.com/{{ $user->instagram_username }}" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+                <a href="https://instagram.com/{{ $user->instagram_username }}" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
             </div>
             @endif
             @if(!empty($user->facebook_username))

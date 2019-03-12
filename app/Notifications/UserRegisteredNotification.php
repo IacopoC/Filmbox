@@ -44,8 +44,8 @@ class UserRegisteredNotification extends Notification
             ->subject('Benvenuto in Filmbox')
             ->greeting('Grazie per esserti registrato in Filmbox!')
             ->line('Benvenuto ' . $this->user->name . ', grazie per esserti registrato su Filmbox.')
-            ->action('Attiva il mio account', url('/tk-generation'))
-            ->line('Filmbox - Cerca, salva e vota i tuoi film preferiti.');
+            ->line('Cerca, salva e vota i tuoi film preferiti.')
+            ->salutation('A presto, lo Staff di Filmbox');
     }
 
 }

@@ -71,10 +71,15 @@ class RegisterController extends Controller
         ]);
     }
 
+    /**
+     * Send a welcome email on user registration.
+     *
+     * @param  object
+     */
+
     protected function registered(Request $request, $user)
     {
         $user->notify(new UserRegisteredNotification($user));
 
-        return view('home');
     }
 }

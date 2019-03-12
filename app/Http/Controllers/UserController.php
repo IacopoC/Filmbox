@@ -16,7 +16,8 @@ class UserController extends Controller
         $this->basetype = $basetype;
     }
 
-     public function profile() {
+     public function profile()
+     {
         
         return view('profile', array('user'=>Auth::user()));
     }
@@ -67,7 +68,8 @@ class UserController extends Controller
     }
 
 
-    public function updateProfile() {
+    public function updateProfile()
+    {
         
         if (Auth::check())  {   
           $id = Auth::user()->id;
