@@ -14,6 +14,9 @@
                 <li class="nav-item mx-0 mx-lg-1">
                     <a class="{{ setActive('upcoming', 'active') }} nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/upcoming') }}">In arrivo</a>
                 </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="{{ setActive('best-of', 'active') }} nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/best-of') }}">I migliori</a>
+                </li>
                 @guest
                 <li class="nav-item mx-0 mx-lg-1">
                     <a class="{{ setActive('login', 'active') }} nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/login') }}">Accedi</a>

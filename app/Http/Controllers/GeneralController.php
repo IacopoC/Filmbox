@@ -37,6 +37,11 @@ class GeneralController extends Controller
         return view('trending', compact('trending_obj'));
     }
 
+    public function bestOf() {
+
+        return view('best-of');
+    }
+
     public function upcoming() {
 
         $upcoming_obj = $this->basetype->getMovie('upcoming');

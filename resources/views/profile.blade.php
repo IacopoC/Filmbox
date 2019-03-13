@@ -22,7 +22,8 @@
             <h4 class="text-uppercase auth-title">Profilo {{ $user->name }}</h4>
             <div class="margin-up"></div>
                 <p><strong>Email:</strong> {{ $user->email }} </p>
-                <p>@if(!empty($user->guest_session_tk)) <strong>Token:</strong> {{ $user->guest_session_tk }} @endif <button onClick="confirmFunction()" class="btn btn-warning float-right" alt="rigenera-token">Genera Token</button></p>
+                <p>@if(!empty($user->guest_session_tk))
+                        <strong>Token TMDB:</strong> {{ $user->guest_session_tk }} @endif <button onClick="confirmFunction()" class="btn btn-warning float-right" alt="rigenera-token">Genera Token</button></p>
             <p><strong>Iscritto dal:</strong> {{ date('d M Y', $user->created_at->timestamp) }}</p>
 
              @if(!empty($user->country))
