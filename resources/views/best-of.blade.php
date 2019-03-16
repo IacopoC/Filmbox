@@ -10,7 +10,7 @@
                 <h2>I migliori film per genere</h2>
                 <div class="row mt-5">
                     <div class="col-md-7 col-lg-3">
-                        <div class="card">
+                        <div class="card m-2">
                             <a href="{{ url ('best-scifi') }}"><img class="card-img-top" src="{{ url('images/filmbox-genres.jpg') }}" alt="Card image cap"></a>
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film di fantascienza</h5>
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <div class="col-md-7 col-lg-3">
-                        <div class="card">
+                        <div class="card m-2">
                             <a href="{{ url ('best-adventure') }}"><img class="card-img-top" src="{{ url('images/filmbox-genres.jpg') }}" alt="Card image cap"></a>
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film di d'avventura</h5>
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="col-md-7 col-lg-3">
-                        <div class="card">
+                        <div class="card m-2">
                             <a href="{{ url ('best-horror') }}"><img class="card-img-top" src="{{ url('images/filmbox-genres.jpg') }}" alt="Card image cap"></a>
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film horror</h5>
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="col-md-7 col-lg-3">
-                        <div class="card">
+                        <div class="card m-2">
                             <a href="{{ url ('best-action') }}"><img class="card-img-top" src="{{ url('images/filmbox-genres.jpg') }}" alt="Card image cap"></a>
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film d'azione</h5>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col-md-7 col-lg-3">
-                        <div class="card">
+                        <div class="card m-2">
                             <a href="{{ url ('best-animation') }}"><img class="card-img-top" src="{{ url('images/filmbox-genres.jpg') }}" alt="Card image cap"></a>
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film d'animazione</h5>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="col-md-7 col-lg-3">
-                        <div class="card">
+                        <div class="card m-2">
                             <a href="{{ url ('best-fantasy') }}"><img class="card-img-top" src="{{ url('images/filmbox-genres.jpg') }}" alt="Card image cap"></a>
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film fantasy</h5>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="col-md-7 col-lg-3">
-                        <div class="card">
+                        <div class="card m-2">
                             <a href="{{ url ('best-commedy') }}"><img class="card-img-top" src="{{ url('images/filmbox-genres.jpg') }}" alt="Card image cap"></a>
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film commedia</h5>
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="col-md-7 col-lg-3">
-                        <div class="card">
+                        <div class="card m-2">
                             <a href="{{ url ('best-documentary') }}"><img class="card-img-top" src="{{ url('images/filmbox-genres.jpg') }}" alt="Card image cap"></a>
                             <div class="card-body">
                                 <h5 class="card-title">Migliori documentari</h5>
