@@ -13,23 +13,27 @@ use Illuminate\Support\Facades\Auth;
 class ListsController extends Controller
 {
 
-    public function createList() {
+    public function createList()
+    {
 
-        if (Auth::check())  {
+        if (Auth::check())
+        {
             $user_id = Auth::user()->id;
         }
 
         return view('create-list', compact('user_id'));
     }
 
-    public function getMoviesforLists($id) {
+    public function getMoviesforLists($id)
+    {
 
         $all_films = Films::with('lists')->find($id);
         return $all_films;
 
     }
 
-    public function getallLists() {
+    public function getallLists()
+    {
 
         $id = Auth::user()->id;
         $lists = Lists::where('users_id', $id)->get();
@@ -38,7 +42,8 @@ class ListsController extends Controller
     }
 
 
-    public function getallFilms() {
+    public function getallFilms()
+    {
 
         $film_id = Films::where('id',">",0)->get();
 
@@ -49,7 +54,8 @@ class ListsController extends Controller
         return $films;
     }
 
-    public function index() {
+    public function index()
+    {
 
         $all_lists = $this->getallLists();
         $films = $this->getallFilms();
@@ -63,7 +69,8 @@ class ListsController extends Controller
     }
 
 
-    public function createLists(Request $request) {
+    public function createLists(Request $request)
+    {
 
         $lists_data = new Lists();
 
@@ -81,7 +88,8 @@ class ListsController extends Controller
         return view('thankyou');
     }
 
-    public function updateMovie(Request $request) {
+    public function updateMovie(Request $request)
+    {
 
         $movie_data = new Films();
 
@@ -97,7 +105,8 @@ class ListsController extends Controller
 
     }
 
-    public function deleteMovie(Request $request) {
+    public function deleteMovie(Request $request)
+    {
 
         $film_id = request('film_id');
         Films::where('id',"=",$film_id)->delete();
@@ -113,7 +122,8 @@ class ListsController extends Controller
     }
 
 
-    public function deleteLists() {
+    public function deleteLists()
+    {
         $list_id = request('lists_id');
 
         Lists::where('id',"=",$list_id)->delete();

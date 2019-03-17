@@ -23,10 +23,7 @@
                                             <div class="col-md-12">
                                                 <h3>Crea o scegli liste</h3>
                                             </div>
-                                        <div class="col-md-4">
-                                        @include('layouts/create-list-btn')
-                                        </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <form id="insert-list" name="list-insert">
                                                 {{ csrf_field() }}
                                                 <div class="form-group">
@@ -48,6 +45,9 @@
                                                 </div>
                                             </form>
                                         </div>
+                                            <div class="col-md-8">
+                                                @include('layouts/create-list-btn')
+                                            </div>
                                             <p id="list-message"></p>
                                         </div>
                                     </div>

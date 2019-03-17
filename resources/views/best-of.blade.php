@@ -15,6 +15,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film di fantascienza</h5>
                                 <p class="card-text">I migliori film di genere sci-fi</p>
+                                <a href="{{ url ('best-scifi') }}" class="card-link">Scopri di più</a>
                             </div>
                         </div>
                     </div>
@@ -24,6 +25,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film di d'avventura</h5>
                                 <p class="card-text">I migliori film di genere avventura</p>
+                                <a href="{{ url ('best-adventure') }}" class="card-link">Scopri di più</a>
                             </div>
                         </div>
                     </div>
@@ -33,6 +35,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film horror</h5>
                                 <p class="card-text">I migliori film di genere horror</p>
+                                <a href="{{ url ('best-horror') }}" class="card-link">Scopri di più</a>
                             </div>
                         </div>
                     </div>
@@ -42,6 +45,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film d'azione</h5>
                                 <p class="card-text">I migliori film di genere azione</p>
+                                <a href="{{ url ('best-action') }}" class="card-link">Scopri di più</a>
                             </div>
                         </div>
                     </div>
@@ -53,6 +57,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film d'animazione</h5>
                                 <p class="card-text">I migliori film d'animazione</p>
+                                <a href="{{ url ('best-animation') }}" class="card-link">Scopri di più</a>
                             </div>
                         </div>
                     </div>
@@ -62,15 +67,17 @@
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film fantasy</h5>
                                 <p class="card-text">I migliori film di genere fantasy</p>
+                                <a href="{{ url ('best-fantasy') }}" class="card-link">Scopri di più</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-7 col-lg-3">
                         <div class="card m-2">
-                            <a href="{{ url ('best-commedy') }}"><img class="card-img-top" src="{{ url('images/filmbox-genres.jpg') }}" alt="Card image cap"></a>
+                            <a href="{{ url ('best-comedy') }}"><img class="card-img-top" src="{{ url('images/filmbox-genres.jpg') }}" alt="Card image cap"></a>
                             <div class="card-body">
                                 <h5 class="card-title">Migliori film commedia</h5>
                                 <p class="card-text">I migliori film di genere commedia</p>
+                                <a href="{{ url ('best-comedy') }}" class="card-link">Scopri di più</a>
                             </div>
                         </div>
                     </div>
@@ -80,6 +87,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Migliori documentari</h5>
                                 <p class="card-text">I migliori film documentario</p>
+                                <a href="{{ url ('best-documentary') }}" class="card-link">Scopri di più</a>
                             </div>
                         </div>
                     </div>
