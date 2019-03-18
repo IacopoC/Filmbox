@@ -26,7 +26,7 @@
                         @foreach($films as $film)
                         @if( $list->id === $film->lists_id )
                             <div class="list-film bg-light pt-4 pb-4 pl-2 mt-4 mb-4">
-                             <h5 class="d-inline"><a href="page-film/{{ $film->content }}"> {{ $film->content_name }}</a>
+                             <h5 class="d-inline"><a href="{{ url('page-film/' . $film->content) }}"> {{ $film->content_name }}</a>
                                   <form id="film-form" class="d-inline" method="POST">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="film_id" id="film-id" value="{{ $film->id }}">

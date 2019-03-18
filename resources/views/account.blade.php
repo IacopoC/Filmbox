@@ -20,7 +20,7 @@
                             <div id="movie-rated-{{ $rated_movie->id }}">
                              <p class="d-inline">{{ $rated_movie->title }} | Voto: {{ $rated_movie->rating }}</p>
                             <button class="btn btn-warning delete-movie" onclick="deleteRating('{{ $rated_movie->id }}')">Cancella</button>
-                         <a href="/page-film/{{ $rated_movie->id }}"><button class="btn btn-info">Scheda film</button></a>
+                         <a href="{{ url('page-film/' . $rated_movie->id) }}"><button class="btn btn-info">Scheda film</button></a>
                         </div>
                     </div>
                     @endforeach

@@ -214,7 +214,7 @@
                  console.log(xhr.responseText);    
             }
         }
-        document.getElementById('rated-message').innerHTML = 'Grazie per aver votato <a href="/account">Elenco film votati <i class="fa fa-arrow-right"></a>';
+        document.getElementById('rated-message').innerHTML = 'Grazie per aver votato <a href="{{ url('account') }}">Elenco film votati <i class="fa fa-arrow-right"></a>';
         xhr.send(param);
     }
 
@@ -243,7 +243,7 @@
                 },
 
                 success: function(result){
-                    $('#list-message').html('Film aggiunto alla lista <a href="/lists">Elenco liste <i class="fa fa-arrow-right"></a>' + result);
+                    $('#list-message').html('Film aggiunto alla lista <a href="{{ url('lists') }}">Elenco liste <i class="fa fa-arrow-right"></a>' + result);
                 },
 
                 error: function (request) {
