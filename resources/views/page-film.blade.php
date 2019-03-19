@@ -12,9 +12,9 @@
                          <h1>{{ ($film_obj->title) }}</h1>
                      </div>
                         
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-4">
                             @if($film_obj->poster_path !='')
-                        <img class="img-poster" src="https://image.tmdb.org/t/p/w400{{$film_obj->poster_path }}">
+                        <img class="img-poster img-fluid" src="https://image.tmdb.org/t/p/w400{{$film_obj->poster_path }}">
                             @endif
                             <!--Sezione pulsanti liste-->
                                 @if (Auth::check())
@@ -55,7 +55,7 @@
                             <!--Fine sezione pulsanti liste-->
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-4">
                          @if($film_obj->overview !='')   
                             <h3>Trama</h3>
                             <p>{{ $film_obj->overview }}</p>

@@ -621,3 +621,20 @@ input[class="sad"]:focus + svg {
     margin:20px 20px 20px 20px;
   }
 }
+
+/*--- Media queries responsive ---*/
+
+@media (max-width: 768px) {
+  html, body {
+    width: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  #selection-media {
+    width: 30% !important;
+  }
+
+  .searchfilm-field {
+    margin: 10px 0;
+  }
+}
