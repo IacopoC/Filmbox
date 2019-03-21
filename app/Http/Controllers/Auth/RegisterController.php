@@ -74,7 +74,7 @@ class RegisterController extends Controller
     /**
      * Send a welcome email on user registration.
      *
-     * @param  object
+     * @param  $request, $user
      */
 
     protected function registered(Request $request, $user)
