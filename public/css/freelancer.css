@@ -525,23 +525,6 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
 }
 
 
-.star-cb-group input[type="radio"] {
-  width:3rem;
-  height:3rem;
-}
-
-input[type="radio"] + svg {
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
-}
-
-svg {
-  fill:#666;
-  height: 3rem;
-  width: 3rem;
-  margin:0;
-}
-
 .control-label, .create-list-l {
   font-weight:bold;
   padding-left:0 !important;
@@ -555,43 +538,6 @@ svg {
   position: relative;
 }
 
-.super-happy,.happy,.neutral,.sad,.super-sad {
-  position: absolute;
-  opacity: 0; 
-}
-
-.super-happy,.happy,.neutral,.sad,.super-sad + svg {
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-input + svg {
-  cursor: pointer;
-}
-
-input[class="super-happy"]:hover + svg,
-input[class="super-happy"]:checked + svg,
-input[class="super-happy"]:focus + svg {
-  fill: rgb(0, 109, 217);
-}
-
-input[class="happy"]:hover + svg,
-input[class="happy"]:checked + svg,
-input[class="happy"]:focus + svg {
-  fill: rgb(0, 204, 79);
-}
-
-input[class="neutral"]:hover + svg,
-input[class="neutral"]:checked + svg,
-input[class="neutral"]:focus + svg {
-  fill: rgb(232, 214, 0);
-}
-
-input[class="sad"]:hover + svg,
-input[class="sad"]:checked + svg,
-input[class="sad"]:focus + svg {
-  fill: rgb(229, 132, 0);
-}
 
 /*--- Cookie banner ---*/
 
