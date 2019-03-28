@@ -12,7 +12,7 @@
                     <h4 class="text-uppercase auth-title">Liste create da {{ Auth::user()->name }}</h4>
 
                     @foreach( $all_lists as $list)
-                        <div class="mt-md-5 p-3">
+                        <div class="mt-md-5">
                         <h4>{{ $list->name }}</h4>
                         <p>{{ $list->description }}</p>
                             <form id="list-form" method="POST" action="{{ action('ListsController@deleteLists') }}" onsubmit="return confirm('Cancellando una lista eliminerai il suo contenuto.');">
@@ -26,13 +26,13 @@
                         @foreach($films as $film)
                         @if( $list->id === $film->lists_id )
                             <div class="list-film bg-light pt-4 pb-4 pl-2 mt-4 mb-4">
-                             <h5 class="d-inline"><a href="{{ url('page-film/' . $film->content) }}"> {{ $film->content_name }}</a>
+                                <p class="d-inline"> {{ $film->content_name }}</p>
+                                <a href="{{ url('page-film/' . $film->content) }}"><button class="btn btn-info float-right mr-2">Scheda film</button></a>
                                   <form id="film-form" class="d-inline" method="POST">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="film_id" id="film-id" value="{{ $film->id }}">
                                       <button type="submit" id="film-submit" class="btn btn-light"><i class="fa fa-times" aria-hidden="true"></i></button>
                                   </form>
-                             </h5>
                             </div>
                             @endif
                                 @endforeach

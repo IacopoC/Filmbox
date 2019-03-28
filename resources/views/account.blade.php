@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Account attività - {{ Auth::user()->name }}
+    Account e votazioni - {{ Auth::user()->name }}
 @endsection
 @section('content')
  <section>
@@ -13,15 +13,17 @@
                <div class="panel panel-primary">
                 
                     @if(!empty($rated_movies->results))
-                    <div class="panel-heading"><h4>Film votati</h4></div>
+                    <div class="panel-heading mt-md-5"><h4>Film votati</h4></div>
                     <div class="panel-body">
                        @foreach($rated_movies->results as $rated_movie)
                         <div class="margin-up-15">
                             <div id="movie-rated-{{ $rated_movie->id }}">
+                                <div class="bg-light pt-4 pb-4 pl-2 mt-4 mb-4">
                              <p class="d-inline">{{ $rated_movie->title }} | Voto: {{ $rated_movie->rating }}</p>
-                            <button class="btn btn-warning delete-movie" onclick="deleteRating('{{ $rated_movie->id }}')">Cancella</button>
-                         <a href="{{ url('page-film/' . $rated_movie->id) }}"><button class="btn btn-info">Scheda film</button></a>
-                        </div>
+                            <button class="btn btn-light delete-movie" onclick="deleteRating('{{ $rated_movie->id }}')"><i class="fa fa-times" aria-hidden="true"></i></button>
+                         <a href="{{ url('page-film/' . $rated_movie->id) }}"><button class="btn btn-info float-right mr-2">Scheda film</button></a>
+                            </div>
+                         </div>
                     </div>
                     @endforeach
                      </div>
@@ -35,7 +37,7 @@
         <div class="col-md-12">
             <h4 class="text-uppercase auth-title mt-5">Opzioni</h4>
               <div class="panel panel-primary">
-                 <div class="panel-heading"><h4>Esportazione ultimi film</h4></div>
+                 <div class="panel-heading mt-md-5"><h4>Esportazione ultimi film</h4></div>
                   <div class="margin-up-15">
               <button class="btn btn-info"><a href="http://files.tmdb.org/p/exports/movie_ids_{{ date('d_m_Y') }}.json.gz">Esporta in ZIP i film</a></button>
           </div>
