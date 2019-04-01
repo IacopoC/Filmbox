@@ -16,111 +16,70 @@
                             @if($film_obj->poster_path !='')
                         <img class="img-poster img-fluid" src="https://image.tmdb.org/t/p/w400{{$film_obj->poster_path }}">
                             @endif
-                            <!--Sezione pulsanti liste-->
-                                @if (Auth::check())
-                                    <div class="create-list-btn mt-md-5 mb-md-2">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <h3>Crea o scegli liste</h3>
-                                            </div>
-                                        <div class="col-md-9">
-                                            <form id="insert-list" name="list-insert">
-                                                {{ csrf_field() }}
-                                                <div class="form-group">
-                                                    <select class="form-control" id="list-select" name="list_select">
-                                                        <option>Scegli una lista</option>
-                                                        @foreach($lists as $list)
-                                                            <option value="{{ $list->id }}">{{ $list->name }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="hidden" name="film_name" id="film-name" value="{{ $film_obj->title }}">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="hidden" name="film_id" id="film-id" value="{{ $id }}">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="submit" class="btn btn-primary" id="lista-film-submit" value="Aggiungi film">
-                                                </div>
-                                            </form>
-                                        </div>
-                                            <div class="col-md-8">
-                                                @include('layouts/create-list-btn')
 
-                                            <div class="mt-4">
-                                            <h6 id="list-message"></h6>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            @endif
-                            <!--Fine sezione pulsanti liste-->
                         </div>
-
-                        <div class="col-md-6 mt-4">
-                         @if($film_obj->overview !='')   
-                            <h3>Trama</h3>
-                            <p>{{ $film_obj->overview }}</p>
+                     <div class="col-md-6 mt-4">
+                         @if($film_obj->overview !='')
+                             <h3>Trama</h3>
+                             <p>{{ $film_obj->overview }}</p>
                          @endif
-                            <?php foreach ($film_obj->genres as $film_genre):
-                            $result_genre[] = $film_genre->name;
-                            endforeach; ?>
+                         <?php foreach ($film_obj->genres as $film_genre):
+                             $result_genre[] = $film_genre->name;
+                         endforeach; ?>
 
-                         <!--Inizio sezione cast-->
-                             @foreach($credits_obj->cast as $credits_people)
-                                 <?php $credits_arr[] = $credits_people->character . " (" . $credits_people->name . ")"; ?>
+                     <!--Inizio sezione cast-->
+                         @foreach($credits_obj->cast as $credits_people)
+                             <?php $credits_arr[] = $credits_people->character . " (" . $credits_people->name . ")"; ?>
+                         @endforeach
+                         <div class="card">
+                             <div class="card-header" id="headingOne">
+                                 <h5 class="mb-0">
+                                     <button class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                         <strong>Cast</strong>
+                                     </button>
+                                 </h5>
+                             </div>
 
-                             @endforeach
-                             <div class="card">
-                                 <div class="card-header" id="headingOne">
-                                     <h5 class="mb-0">
-                                         <button class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                             <strong>Cast</strong>
-                                         </button>
-                                     </h5>
-                                 </div>
-
-                                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                     <div class="card-body">
-                                         <p>{{ implode(", ",$credits_arr) }}</p>
-                                     </div>
+                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                 <div class="card-body">
+                                     <p>{{ implode(", ",$credits_arr) }}</p>
                                  </div>
                              </div>
+                         </div>
                          <!--Fine sezione cast-->
 
-                          @if(isset($result_genre))
-                            <p><strong>Genere:</strong> {{ implode(", ",$result_genre) }} </p>
-                          @endif
-                          @if(!empty($trailer_obj->results))
-                          <p><strong>Trailer disponibili:</strong>
-                            <?php $i = 0; ?>
-                            @foreach($trailer_obj->results as $trailer_content)
-                           <?php $i++; ?> 
-                             <a href="https://www.youtube.com/watch?v={{ $trailer_content->key }}" target="_blank">Trailer {{ $i }}</a>
-                            @endforeach
-                            </p> 
-                           @endif
-
-                                 @foreach($dates_obj->results as $dt)
-                                    @if($dt->iso_3166_1 == 'IT')
-                                       <?php $date = strtotime($dt->release_dates[0]->release_date);
-                                        $date_converted = date('d-m-Y', $date); ?>
-                                     <p><strong>Data di uscita in Italia:</strong> {{ $date_converted }} </p>
-                                    @endif
+                         @if(isset($result_genre))
+                             <p><strong>Genere:</strong> {{ implode(", ",$result_genre) }} </p>
+                         @endif
+                         @if(!empty($trailer_obj->results))
+                             <p><strong>Trailer disponibili:</strong>
+                                 <?php $i = 0; ?>
+                                 @foreach($trailer_obj->results as $trailer_content)
+                                     <?php $i++; ?>
+                                     <a href="https://www.youtube.com/watch?v={{ $trailer_content->key }}" target="_blank">Trailer {{ $i }} <i class="fa fa-fw fa-external-link"></i></a>
                                  @endforeach
+                             </p>
+                         @endif
 
-                             <div class="votes-box">
-                                 <p class="d-inline"><strong>Voto medio:</strong> {{ $film_obj->vote_average }}</p>
-                             </div>
+                         @foreach($dates_obj->results as $dt)
+                             @if($dt->iso_3166_1 == 'IT')
+                                 <?php $date = strtotime($dt->release_dates[0]->release_date);
+                                 $date_converted = date('d-m-Y', $date); ?>
+                                 <p><strong>Data di uscita in Italia:</strong> {{ $date_converted }} </p>
+                             @endif
+                         @endforeach
 
-                             <?php if (Auth::check()): ?>
-                             <div class="votes-box">
-                            <form  name="movie-rating" id="rating-form">
-                                {{ csrf_field() }}
-                           <fieldset>
-                            <p><strong>Vota il film</strong></p>
-                            <div class="rating-fields">
+                         <div class="votes-box">
+                             <p class="d-inline"><strong>Voto medio:</strong> {{ $film_obj->vote_average }}</p>
+                         </div>
+
+                         <?php if (Auth::check()): ?>
+                         <div class="votes-box">
+                             <form  name="movie-rating" id="rating-form">
+                                 {{ csrf_field() }}
+                                 <fieldset>
+                                     <p><strong>Vota il film</strong></p>
+                                     <div class="rating-fields">
                             <span class="star-cb-group">
                               <label for="vote-4">Da evitare
                                   <input type="radio" id="rating-id-4" name="rating" value="4" /></label>
@@ -134,19 +93,63 @@
                                 <label for="vote-10" class="px-2">Ottimo
                                 <input type="radio" id="rating-id-10" name="rating" value="10" /></label>
                             </span>
-                          </div>
-                            <input id="movieId" name="movie-id" type="hidden" value="{{ $id }}">
-                            </fieldset>
-                                <button type="submit" class="btn btn-primary">
-                                    Vota
-                                </button>
-                            </form>
+                                     </div>
+                                     <input id="movieId" name="movie-id" type="hidden" value="{{ $id }}">
+                                 </fieldset>
+                                 <button type="submit" class="btn btn-primary">
+                                     Vota
+                                 </button>
+                             </form>
+                         </div>
+                         <div class="margin-up">
+                             <h6 id="rated-message"></h6>
+                         </div>
+                         <?php endif; ?>
+                     </div>
+                     <div class="col-md-12 mt-4">
+                         <!--Sezione pulsanti liste-->
+                         @if (Auth::check())
+                             <div class="create-list-btn mt-md-5 mb-md-2">
+                                 <div class="row">
+                                     <div class="col-md-12">
+                                         <h5>Crea o scegli liste</h5>
+                                     </div>
+                                     <div class="col-md-9">
+                                         <form id="insert-list" name="list-insert">
+                                             {{ csrf_field() }}
+                                             <div class="form-group">
+                                                 <select class="form-control" id="list-select" name="list_select">
+                                                     <option>Scegli una lista</option>
+                                                     @foreach($lists as $list)
+                                                         <option value="{{ $list->id }}">{{ $list->name }}</option>
+                                                     @endforeach
+                                                 </select>
+                                             </div>
+                                             <div class="form-group">
+                                                 <input type="hidden" name="film_name" id="film-name" value="{{ $film_obj->title }}">
+                                             </div>
+                                             <div class="form-group">
+                                                 <input type="hidden" name="film_id" id="film-id" value="{{ $id }}">
+                                             </div>
+                                             <div class="form-group">
+                                                 <input type="submit" class="btn btn-primary" id="lista-film-submit" value="Aggiungi film">
+                                             </div>
+                                         </form>
+                                     </div>
+                                     <div class="col-md-8">
+                                         @include('layouts/create-list-btn')
+
+                                         <div class="mt-4">
+                                             <h6 id="list-message"></h6>
+                                         </div>
+                                     </div>
                                  </div>
-                            <div class="margin-up">
-                            <h6 id="rated-message"></h6>
-                          </div>
-                        <?php endif; ?>
-                        </div>
+                             </div>
+                     @endif
+                     <!--Fine sezione pulsanti liste-->
+                     </div>
+
+
                        </div>
                     </div>
                 </div>
@@ -174,6 +177,7 @@
              </div>
          </section>
          @endif
+    @include('layouts/search-modal')
          <!--Fine film simili-->
     @if (Auth::check())
          <script>

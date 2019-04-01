@@ -47,7 +47,7 @@
       </div>
     </div>
     </section>
-
+ @include('layouts/search-modal')
      <script>
     function deleteRating(movie_id) {
     const api_key = '{{ env('MOVIE_DATABASE_KEY') }}';

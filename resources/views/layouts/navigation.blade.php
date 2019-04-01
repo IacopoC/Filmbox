@@ -55,6 +55,13 @@
                         </ul>
                     </li>
                 @endguest
+                @if(!Request::is('/'))
+                <li class="nav-item mx-0 mx-lg-1">
+                    <button type="button" class="btn btn-primary mt-1" data-toggle="modal" data-target="#searchModalCenter">
+                        <i class="fa fa-fw fa-search"></i>
+                    </button>
+                </li>
+                @endif
             </ul>
         </div>
     </div>

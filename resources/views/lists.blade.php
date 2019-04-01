@@ -48,6 +48,7 @@
         </div>
     </div>
 </section>
+@include('layouts/search-modal')
     <script>
         $(document).ready(function() {
             $( "#film-submit" ).click(function(event) {

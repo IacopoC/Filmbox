@@ -12,14 +12,17 @@
                 <div class="row">
                     @foreach ($fantasy_obj->results as $fantasy_movie)
                         <div class="col-md-7 col-lg-3">
+                            <div class="film-box">
                             <a href="page-film/{{ $fantasy_movie->id }}">
                                 <img class="img-poster" src="https://image.tmdb.org/t/p/w200{{$fantasy_movie->poster_path }}">
                                 <h6 class="title-movie">{{ $fantasy_movie->title }}</h6>
                             </a>
+                            </div>
                         </div>
                     @endforeach
                 </div>
             </div>
         </div>
     </section>
+    @include('layouts/search-modal')
 @endsection

@@ -74,35 +74,35 @@
                                     </p>
                                     <p>
                                         <strong>Google Fonts (Google Inc.)</strong></p>
-                                <p>
+                                    <p>
                                     Google Fonts è un servizio di visualizzazione di stili di carattere gestito da Google Inc. che permette a questa Applicazione di integrare tali contenuti all’interno delle proprie pagine.
                                     Dati personali raccolti: Cookie e Dati di utilizzo.
                                     Luogo del trattamento : USA – Privacy Policy
                                     </p>
                                     <p>
                                        <strong>Widget Google Maps (Google Inc.)</strong> </p>
-                                <p>
+                                    <p>
                                     Google Maps è un servizio di visualizzazione di mappe gestito da Google Inc. che permette a questa Applicazione di integrare tali contenuti all’interno delle proprie pagine.
                                     Dati personali raccolti: Cookie e Dati di utilizzo.
                                     Luogo del trattamento : USA – Privacy Policy
                                     </p>
                                     <p>
                                         <strong> Widget Video Youtube (Google Inc.)</strong></p>
-                                <p>
+                                    <p>
                                     Youtube è un servizio di visualizzazione di contenuti video gestito da Google Inc. che permette a questa Applicazione di integrare tali contenuti all’interno delle proprie pagine.
                                     Dati personali raccolti: Cookie e Dati di utilizzo.
                                     Luogo del trattamento : USA – Privacy Policy
                                      </p>
                                      <p>
                                          <strong> Come posso controllare l’installazione di Cookie?</strong></p>
-                                <p>
+                                    <p>
                                     In aggiunta a quanto indicato in questo documento, l’Utente può gestire le preferenze relative ai Cookie direttamente all’interno del proprio browser ed impedire – ad esempio – che terze parti possano installarne. Tramite le preferenze del browser è inoltre possibile eliminare i Cookie installati in passato, incluso il Cookie in cui venga eventualmente salvato il consenso all’installazione di Cookie da parte di questo sito. È importante notare che disabilitando tutti i Cookie, il funzionamento di questo sito potrebbe essere compromesso. L’Utente può trovare informazioni su come gestire i Cookie nel suo browser ai seguenti indirizzi: Google Chrome, Mozilla Firefox, Apple Safari and Microsoft Windows Explorer.
                                     In caso di servizi erogati da terze parti, l’Utente può inoltre esercitare il proprio diritto ad opporsi al tracciamento informandosi tramite la privacy policy della terza parte, tramite il link di opt out se esplicitamente fornito o contattando direttamente la stessa.
                                     Fermo restando quanto precede, il Titolare informa che l’Utente può avvalersi di Your Online Choices. Attraverso tale servizio è possibile gestire le preferenze di tracciamento della maggior parte degli strumenti pubblicitari. Il Titolare, pertanto, consiglia agli Utenti di utilizzare tale risorsa in aggiunta alle informazioni fornite dal presente documento.
                                     </p>
                                     <p>
                                         <strong>Titolare del Trattamento dei Dati</strong></p>
-                                <p>
+                                    <p>
                                     Iacopo Cutino Via Maregnago 2 – Marano di Valpolicella (VR) +39 3408413975 – iacopo.cutino@gmail.com – C.Fiscale: CTNCPI87C24L781F
                                     </p>
                                     <p>
@@ -149,7 +149,7 @@
                                     </p>
                                     <p>
                                         <strong>Riferimenti legali</strong></p>
-                                <p>
+                                    <p>
                                     Avviso agli Utenti europei: la presente informativa privacy è redatta in adempimento degli obblighi previsti dall’Art. 10 della Direttiva n. 95/46/CE, nonché a quanto previsto dalla Direttiva 2002/58/CE, come aggiornata dalla Direttiva 2009/136/CE, in materia di Cookie.
                                     Questa informativa privacy riguarda esclusivamente questa Applicazione.
                                 </p>
@@ -160,4 +160,5 @@
             </div>
         </div>
     </section>
+    @include('layouts/search-modal')
 @endsection
