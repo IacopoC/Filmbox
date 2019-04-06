@@ -49,10 +49,10 @@
                          <!--Fine sezione cast-->
 
                          @if(isset($result_genre))
-                             <p><strong>Genere:</strong> {{ implode(", ",$result_genre) }} </p>
+                             <p class="mt-4 mb-4"><strong>Genere:</strong> {{ implode(", ",$result_genre) }} </p>
                          @endif
                          @if(!empty($trailer_obj->results))
-                             <p><strong>Trailer disponibili:</strong>
+                             <p class="mt-4 mb-4"><strong>Trailer disponibili:</strong>
                                  <?php $i = 0; ?>
                                  @foreach($trailer_obj->results as $trailer_content)
                                      <?php $i++; ?>
@@ -65,12 +65,16 @@
                              @if($dt->iso_3166_1 == 'IT')
                                  <?php $date = strtotime($dt->release_dates[0]->release_date);
                                  $date_converted = date('d-m-Y', $date); ?>
-                                 <p><strong>Data di uscita in Italia:</strong> {{ $date_converted }} </p>
+                                 <p class="mt-4 mb-4"><strong>Data di uscita in Italia:</strong> {{ $date_converted }} </p>
                              @endif
                          @endforeach
 
                          <div class="votes-box">
-                             <p class="d-inline"><strong>Voto medio:</strong> {{ $film_obj->vote_average }}</p>
+                             <p class="d-inline"><strong>Voto medio:</strong> {{ $film_obj->vote_average }}
+                                 @if($film_obj->vote_average > 0.0 && $film_obj->vote_average < 6.0 ) <button type="button" class="btn btn-danger ml-2">Da evitare</button>
+                                 @elseif($film_obj->vote_average >= 6.0 && $film_obj->vote_average < 8.0) <button type="button" class="btn btn-secondary ml-2">Sufficiente</button>
+                                 @elseif($film_obj->vote_average >= 8 && $film_obj->vote_average < 10.0) <button type="button" class="btn btn-primary ml-2">Buono</button>
+                                 @else <button type="button" class="btn btn-success ml-2">Ottimo</button> @endif</p>
                          </div>
 
                          <?php if (Auth::check()): ?>
@@ -160,17 +164,19 @@
         <section>
         <div class="container">
                  <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 mb-3">
                             <h3>Film simili da scoprire:</h3>
                         </div>
                     @foreach($similar_obj->results as $similar_movie)
                       <div class="col-md-7 col-lg-2">
+                          <div class="film-box">
                             <a href="{{ $similar_movie->id }}">
                             @if($similar_movie->poster_path != '')
                             <img class="img-poster" src="https://image.tmdb.org/t/p/w154{{$similar_movie->poster_path }}">
                             @endif
                          <p class="title-movie">{{$similar_movie->title }}</p>
                         </a>
+                          </div>
                       </div>
                     @endforeach
                 </div>

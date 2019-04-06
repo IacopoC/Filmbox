@@ -21,7 +21,7 @@
                                 <div class="bg-light pt-4 pb-4 pl-2 mt-4 mb-4">
                              <p class="d-inline">{{ $rated_movie->title }} | Voto: {{ $rated_movie->rating }}</p>
                             <button class="btn btn-light delete-movie" onclick="deleteRating('{{ $rated_movie->id }}')"><i class="fa fa-times" aria-hidden="true"></i></button>
-                         <a href="{{ url('page-film/' . $rated_movie->id) }}"><button class="btn btn-info float-right mr-2">Scheda film</button></a>
+                         <a href="{{ url('page-film/' . $rated_movie->id) }}"><button class="btn btn-info float-md-right mr-2">Scheda film</button></a>
                             </div>
                          </div>
                     </div>
