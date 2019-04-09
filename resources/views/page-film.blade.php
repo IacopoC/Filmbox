@@ -71,7 +71,8 @@
 
                          <div class="votes-box">
                              <p class="d-inline"><strong>Voto medio:</strong> {{ $film_obj->vote_average }}
-                                 @if($film_obj->vote_average > 0.0 && $film_obj->vote_average < 6.0 ) <button type="button" class="btn btn-danger ml-2">Da evitare</button>
+                                 @if($film_obj->vote_average == 0) <button type="button" class="btn btn-secondary ml-2">Non disponibile</button>
+                                 @elseif($film_obj->vote_average > 0.0 && $film_obj->vote_average < 6.0 ) <button type="button" class="btn btn-danger ml-2">Da evitare</button>
                                  @elseif($film_obj->vote_average >= 6.0 && $film_obj->vote_average < 8.0) <button type="button" class="btn btn-secondary ml-2">Sufficiente</button>
                                  @elseif($film_obj->vote_average >= 8 && $film_obj->vote_average < 10.0) <button type="button" class="btn btn-primary ml-2">Buono</button>
                                  @else <button type="button" class="btn btn-success ml-2">Ottimo</button> @endif</p>
