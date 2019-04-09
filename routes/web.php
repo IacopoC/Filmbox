@@ -26,6 +26,8 @@ Route::get('/profile', 'UserController@profile')->middleware('auth');
 
 Route::post('/profile', 'UserController@updateProfile');
 
+Route::post('/delete-user', 'UserController@deleteProfile');
+
 Route::get('/tk-generation', 'UserController@storeSession')->middleware('auth');
 
 Route::get('/create-list', 'ListsController@createList')->middleware('auth');

@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+use App\Users;
+
+use App\Lists;
+
+use App\Films;
+
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -94,6 +100,25 @@ class UserController extends Controller
 
             return view('profile', compact('user'));
     
+    }
+
+    public function deleteProfile() {
+        if (Auth::check())  {
+            $id = Auth::user()->id;
+        }
+
+        $lists = Lists::where('users_id','=',$id)->get();
+
+        foreach($lists as $list) {
+            Films::where('lists_id', '=', $list->id)->delete();
+        }
+
+        Lists::where('users_id','=',$id)->delete();
+        Users::where('id',"=",$id)->delete();
+
+        Auth::logout();
+        return view('delete-user');
+
     }
 
 }

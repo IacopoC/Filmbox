@@ -60,6 +60,12 @@
                     @endif        
         </div>
         <button data-toggle="modal" data-target="#myModal" class="btn btn-info">Modifica profilo</button>
+            <div class="mt-2 mb-2">
+        <form id="userdelete-form" method="POST" action="{{ url('/delete-user') }}" onsubmit="return confirm('Cancellando il profilo perderai tutto il suo contenuto');">
+                {{ csrf_field() }}
+                <button type="submit" class="btn btn-danger">Cancella Profilo</button>
+        </form>
+            </div>
         </div>
     </div>
 </div>
