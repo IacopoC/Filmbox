@@ -65,4 +65,5 @@
     </div>
 </div>
     </section>
+    @include('layouts/search-modal')
 @endsection
