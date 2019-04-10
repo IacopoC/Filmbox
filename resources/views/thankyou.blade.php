@@ -15,7 +15,7 @@
 
                 <div class="panel-body">
                     <h3>Hai creato una lista</h3>
-                    <a href="{{ url('/lists') }}"><button type="button" class="btn btn-info">Torna all' elenco liste</button></a>
+                    <a href="{{ url('/lists') }}"><button type="button" class="btn btn-info">Torna all'elenco liste</button></a>
                 </div>
             </div>
         </div>

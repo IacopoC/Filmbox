@@ -10,20 +10,16 @@
     <div class="container">
         <div class="margin-up">
             <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="image-avatar">
                 <img class="img-profile" src="{{ 'https://www.gravatar.com/avatar/' . gravatar_img($user->email) }} . '?s=200'">
-            </div> 
-            <div class="margin-up">
-            <p>Vuoi cambiare l'immagine del profilo? La prendiamo da <a href="https://www.gravatar.com" target="_blank">gravatar.com</a></p>
-          </div>
+            </div>
         </div>
-        <div class="col-md-6">
-            <h4 class="text-uppercase auth-title">Profilo {{ $user->name }}</h4>
-            <div class="margin-up"></div>
+        <div class="col-md-9">
+            <h4 class="text-uppercase auth-title mb-4">Profilo {{ $user->name }}</h4>
                 <p><strong>Email:</strong> {{ $user->email }} </p>
                 <p>@if(!empty($user->guest_session_tk))
-                        <strong>Token TMDB:</strong> {{ $user->guest_session_tk }} @endif <button onClick="confirmFunction()" class="btn btn-warning float-right" alt="rigenera-token">Genera Token</button></p>
+                        <strong>Token TMDB:</strong> {{ $user->guest_session_tk }} @endif <button onClick="confirmFunction()" class="btn btn-warning float-md-right mt-3 mb-3" alt="rigenera-token">Genera Token</button></p>
             <p><strong>Iscritto dal:</strong> {{ date('d M Y', $user->created_at->timestamp) }}</p>
 
              @if(!empty($user->country))
@@ -59,13 +55,18 @@
                      </div>
                     @endif        
         </div>
+            <p>Vuoi cambiare l'immagine del profilo? La prendiamo da <a href="https://www.gravatar.com" target="_blank">gravatar.com</a></p>
+      <div class="row">
+       <div class="col-md-9 mt-3 mb-3">
         <button data-toggle="modal" data-target="#myModal" class="btn btn-info">Modifica profilo</button>
-            <div class="mt-2 mb-2">
+       </div>
+            <div class="col-md-3 text-md-right mt-3 mb-3">
         <form id="userdelete-form" method="POST" action="{{ url('/delete-user') }}" onsubmit="return confirm('Cancellando il profilo perderai tutto il suo contenuto');">
                 {{ csrf_field() }}
                 <button type="submit" class="btn btn-danger">Cancella Profilo</button>
         </form>
             </div>
+      </div>
         </div>
     </div>
 </div>

@@ -14,8 +14,8 @@
                             <div class="panel-heading"></div>
 
                             <div class="panel-body">
-                                <h3>Hai eliminato un utente</h3>
-                                <a href="{{ url('/') }}"><button type="button" class="btn btn-info">Torna all' homepage</button></a>
+                                <h3>Il tuo profilo è stato eliminato, grazie</h3>
+                                <a href="{{ url('/') }}"><button type="button" class="btn btn-info">Torna all'homepage</button></a>
                             </div>
                         </div>
                     </div>
