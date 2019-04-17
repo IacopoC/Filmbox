@@ -25,7 +25,7 @@
                     <div class="button-box">
                         <button class="btn-secondary btn-more-results-upcoming">Mostra più risultati  <i class="fa fa-fw fa-chevron-down"></i></button>
                     </div>
-                    <div class="row more-results-upcoming">
+                    <div class="row more-results">
                     </div>
                 </div>
             </div>

@@ -483,7 +483,16 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
 
 }
 
-.btn-more-results-trending, .btn-more-results-upcoming {
+.btn-more-results-trending,
+.btn-more-results-upcoming,
+.btn-more-results-scifi,
+.btn-more-results-comedy,
+.btn-more-results-horror,
+.btn-more-results-doc,
+.btn-more-results-adventure,
+.btn-more-results-fantasy,
+.btn-more-results-animation,
+.btn-more-results-action {
   padding:10px 20px;
 }
 

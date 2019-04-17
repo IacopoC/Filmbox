@@ -16,7 +16,7 @@ $(document).ready(function(){
                     let image = "<img class=\"img-poster\" src=\"https://image.tmdb.org/t/p/w200" + value['poster_path'] + "\"/>";
                     let title = "<h6 class=\"title-movie\"><strong>" + value['title'] + "</strong></h6>";
 
-                    jQuery(".more-results").append("<div class=\"col-md-7 col-lg-3\">" +
+                    jQuery(".more-results").append("<div class=\"col-md-7 col-lg-3 text-center\">" +
                          "<a href='page-film/" + value['id'] + "'>" + image + title + "</a></div>");
                 })
             },
@@ -38,7 +38,7 @@ $(document).ready(function(){
                     let image = "<img class=\"img-poster\" src=\"https://image.tmdb.org/t/p/w200" + value['poster_path'] + "\"/>";
                     let title = "<h6 class=\"title-movie\"><strong>" + value['title'] + "</strong></h6>";
 
-                    jQuery(".more-results-upcoming").append("<div class=\"col-md-7 col-lg-3\">" +
+                    jQuery(".more-results").append("<div class=\"col-md-7 col-lg-3 text-center\">" +
                         "<a href='page-film/" + value['id'] + "'>" + image + title + "</a></div>");
                 })
             },
