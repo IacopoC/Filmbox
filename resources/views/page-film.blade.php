@@ -19,9 +19,11 @@
 
                         </div>
                      <div class="col-md-6 mt-4">
+                         <h3>Trama</h3>
                          @if($film_obj->overview !='')
-                             <h3>Trama</h3>
                              <p>{{ $film_obj->overview }}</p>
+                         @else
+                             <p>La trama non è disponibile</p>
                          @endif
                          <?php foreach ($film_obj->genres as $film_genre):
                              $result_genre[] = $film_genre->name;
@@ -175,7 +177,7 @@
                             @if($similar_movie->poster_path != '')
                             <img class="img-poster" src="https://image.tmdb.org/t/p/w154{{$similar_movie->poster_path }}">
                             @endif
-                         <p class="title-movie">{{$similar_movie->title }}</p>
+                         <p class="title-movie font-weight-bold">{{$similar_movie->title }}</p>
                         </a>
                           </div>
                       </div>
@@ -202,7 +204,7 @@
 
         let xhr = new XMLHttpRequest();
 
-        let url = 'https://api.themoviedb.org/3/movie/' + movie_id + '/rating?api_key=' + api_key + '&guest_session_id=' + guest_session_tk;
+        let url = `https://api.themoviedb.org/3/movie/${movie_id}/rating?api_key=${api_key}&guest_session_id=${guest_session_tk}`;
       
         xhr.open('POST', url , true);
         xhr.setRequestHeader('Content-type','application/json;charset=utf-8');
@@ -211,7 +213,7 @@
                  console.log(xhr.responseText);    
             }
         }
-        document.getElementById('rated-message').innerHTML = 'Grazie per aver votato <a href="{{ url('account') }}">Elenco film votati <i class="fa fa-arrow-right"></a>';
+        document.getElementById('rated-message').innerHTML = `Grazie per aver votato <a href="{{ url('account') }}">Elenco film votati <i class="fa fa-arrow-right"></a>`;
         xhr.send(param);
     }
 
@@ -240,7 +242,7 @@
                 },
 
                 success: function(result){
-                    $('#list-message').html('Film aggiunto alla lista <a href="{{ url('lists') }}">Elenco liste <i class="fa fa-arrow-right"></a>' + result);
+                    $('#list-message').html(`Film aggiunto alla lista <a href="{{ url('lists') }}">Elenco liste <i class="fa fa-arrow-right"></a>${result}`);
                 },
 
                 error: function (request) {

@@ -41,16 +41,15 @@
                 $(this).hide();
 
                 $.ajax({
-                    url: "https://api.themoviedb.org/3/discover/movie?api_key=" + api_key + "&with_genres=16&sort_by=vote_average.desc&vote_count.gte=10&page=2",
+                    url: `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=16&sort_by=vote_average.desc&vote_count.gte=10&page=2`,
                     dataType: 'json',
                     success: function (result) {
                         "use strict";
                         $.each(result.results, function (index, value) {
-                            let image = "<img class=\"img-poster\" src=\"https://image.tmdb.org/t/p/w200" + value['poster_path'] + "\"/>";
-                            let title = "<h6 class=\"title-movie\"><strong>" + value['title'] + "</strong></h6>";
+                            let image = `<img class=\"img-poster\" src=\"https://image.tmdb.org/t/p/w200${value['poster_path']}"/>`;
+                            let title = `<h6 class=\"title-movie\"><strong>${value['title']}</strong></h6>`;
 
-                            jQuery(".more-results").append("<div class=\"col-md-7 col-lg-3 text-center\">" +
-                                "<a href='page-film/" + value['id'] + "'>" + image + title + "</a></div>");
+                            jQuery(".more-results").append(`<div class=\"col-md-7 col-lg-3 text-center\"><a href='page-film/${value['id']}'>${image}${title}</a></div>`);
                         })
                     },
                     error: function (xhr, status, error) {
