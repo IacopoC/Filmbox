@@ -502,6 +502,13 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
 
 /*------Pagina liste-------*/
 
+.create-list-btn {
+  background-color:#f2f2f2;
+  padding:10px;
+  border-radius: 10px;
+  margin:5px 0;
+}
+
 .list-film {
   border-radius: 10px;
   padding:10px 0;
@@ -509,7 +516,7 @@ box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
 
 @media only screen and (min-width: 700px) {
   #list-select {
-    width: 50%;
+    width: 100%;
   }
 }
 

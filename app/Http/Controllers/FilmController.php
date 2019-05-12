@@ -43,20 +43,15 @@ class FilmController extends Controller
     {
 
         $guest_tk = $this->getguestSessionTk();
-
         $film_obj = $this->basetype->getMovie($id);
-
         $dates_obj = $this->basetype->getReleaseDates($id);
-
         $similar_obj = $this->basetype->getSimilarMovie($id);
-
         $trailer_obj = $this->basetype->getVideoTMovie($id);
-
         $credits_obj = $this->basetype->getCredits($id);
-
+        $reviews_obj = $this->basetype->getReviews($id);
         $lists = $this->getLists();
 
-        return view('page-film', compact('film_obj','id', 'similar_obj','guest_tk','trailer_obj','dates_obj','credits_obj','lists'));
+        return view('page-film', compact('film_obj','id', 'similar_obj','guest_tk','trailer_obj','dates_obj','credits_obj', 'reviews_obj','lists'));
 
     }
 

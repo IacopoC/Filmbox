@@ -108,20 +108,19 @@
                                  </button>
                              </form>
                          </div>
-                         <div class="margin-up">
                              <h6 id="rated-message"></h6>
-                         </div>
                          <?php endif; ?>
                      </div>
-                     <div class="col-md-12 mt-4">
+                     <div class="col-md-6"></div>
+                     <div class="col-md-6">
                          <!--Sezione pulsanti liste-->
                          @if (Auth::check())
-                             <div class="create-list-btn mt-md-5 mb-md-2">
+                             <div class="create-list-btn mb-md-2">
                                  <div class="row">
                                      <div class="col-md-12">
-                                         <h5>Crea o scegli liste</h5>
+                                         <p><strong>Crea o scegli liste</strong></p>
                                      </div>
-                                     <div class="col-md-9">
+                                     <div class="col-md-12">
                                          <form id="insert-list" name="list-insert">
                                              {{ csrf_field() }}
                                              <div class="form-group">
@@ -156,11 +155,39 @@
                      <!--Fine sezione pulsanti liste-->
                      </div>
 
-
                        </div>
                     </div>
-                </div>
-        </section>
+
+    <!--Sezione critica-->
+    @if(!empty($reviews_obj->results))
+
+            <div class="row">
+              <div class="col-md-12">
+                  @foreach( $reviews_obj->results as $review_ob )
+                  <div class="card mt-3">
+                      <div class="card-header" id="headingTwo">
+                          <h5 class="mb-0">
+                              <button class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                  <strong>Critica</strong>
+                              </button>
+                          </h5>
+                      </div>
+
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                              <h3>{{ $review_ob->author }}</h3>
+                              <p>{{ $review_ob->content }}</p>
+                              <p><a href="{{ $review_ob->url }}" target="_blank">Link scheda critica <i class="fa fa-arrow-right"></i></a></p>
+                          </div>
+                      </div>
+                  </div>
+                  @endforeach
+              </div>
+            </div>
+        </div>
+    </section>
+    @endif
+        <!--Fine sezione critica-->
         <!-- Sezione film simili -->
 
         @if(!empty($similar_obj->results))
@@ -213,7 +240,7 @@
                  console.log(xhr.responseText);    
             }
         }
-        document.getElementById('rated-message').innerHTML = `Grazie per aver votato <a href="{{ url('account') }}">Elenco film votati <i class="fa fa-arrow-right"></a>`;
+        document.getElementById('rated-message').innerHTML = `Grazie per aver votato <a href="{{ url('account') }}">Elenco film votati <i class="fa fa-arrow-right"></i></a>`;
         xhr.send(param);
     }
 
