@@ -175,7 +175,7 @@
 
                       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                           <div class="card-body">
-                              <h3>{{ $review_ob->author }}</h3>
+                              <p><strong>{{ ($film_obj->title) }} - Recensione di {{ $review_ob->author }}</strong></p>
                               <p>{{ $review_ob->content }}</p>
                               <p><a href="{{ $review_ob->url }}" target="_blank">Link scheda critica <i class="fa fa-arrow-right"></i></a></p>
                           </div>
