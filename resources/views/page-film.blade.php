@@ -73,11 +73,12 @@
 
                          <div class="votes-box">
                              <p class="d-inline"><strong>Voto medio:</strong> {{ $film_obj->vote_average }}
-                                 @if($film_obj->vote_average == 0) <button type="button" class="btn btn-secondary ml-2">Non disponibile</button>
-                                 @elseif($film_obj->vote_average > 0.0 && $film_obj->vote_average < 6.0 ) <button type="button" class="btn btn-danger ml-2">Da evitare</button>
-                                 @elseif($film_obj->vote_average >= 6.0 && $film_obj->vote_average < 8.0) <button type="button" class="btn btn-secondary ml-2">Sufficiente</button>
-                                 @elseif($film_obj->vote_average >= 8 && $film_obj->vote_average < 10.0) <button type="button" class="btn btn-primary ml-2">Buono</button>
-                                 @else <button type="button" class="btn btn-success ml-2">Ottimo</button> @endif</p>
+                                 @if($film_obj->vote_average == 0) <span class="text-secondary"><strong>Non disponibile</strong></span>
+                                 @elseif($film_obj->vote_average > 0.0 && $film_obj->vote_average < 6.0 ) <span class="text-danger"><strong>Da evitare</strong></span>
+                                 @elseif($film_obj->vote_average >= 6.0 && $film_obj->vote_average < 7.0) <span class="text-info"><strong>Sufficiente</strong></span>
+                                 @elseif($film_obj->vote_average >= 7.0 && $film_obj->vote_average < 8.0) <span class="text-secondary"><strong>Discreto</strong></span>
+                                 @elseif($film_obj->vote_average >= 8 && $film_obj->vote_average < 10.0) <span class="text-primary"><strong>Buono</strong></span>
+                                 @else <span class="text-success"><strong>Ottimo</strong></span> @endif</p>
                          </div>
 
                          <?php if (Auth::check()): ?>
@@ -163,25 +164,25 @@
 
             <div class="row">
               <div class="col-md-12">
-                  @foreach( $reviews_obj->results as $review_ob )
                   <div class="card mt-3">
                       <div class="card-header" id="headingTwo">
                           <h5 class="mb-0">
                               <button class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                  <strong>Critica</strong>
+                                  <strong>Recensione film</strong>
                               </button>
                           </h5>
                       </div>
 
                       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          @foreach( $reviews_obj->results as $review_ob )
                           <div class="card-body">
                               <p><strong>{{ ($film_obj->title) }} - Recensione di {{ $review_ob->author }}</strong></p>
                               <p>{{ $review_ob->content }}</p>
                               <p><a href="{{ $review_ob->url }}" target="_blank">Link scheda critica <i class="fa fa-arrow-right"></i></a></p>
                           </div>
+                           @endforeach
                       </div>
                   </div>
-                  @endforeach
               </div>
             </div>
         </div>
