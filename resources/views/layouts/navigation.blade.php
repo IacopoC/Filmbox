@@ -33,7 +33,7 @@
 
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{{ url('/account') }}">Account</a>
+                                <a href="{{ url('/account') }}">Votazioni</a>
                             </li>
                             <li>
                                 <a href="{{ url('/profile') }}">Profilo</a>
